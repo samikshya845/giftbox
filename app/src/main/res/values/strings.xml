@@ -1,0 +1,106 @@
+<resources>
+
+    <string name="loading">Loading..</string>
+    <string name="get_started">Get Started</string>
+    <string name="delivering_joy_one_gift_at_a_time">Delivering joy, one gift at a time</string>
+    <string name="giftbox1">GiftBox</string>
+
+
+    <string name="giftbox">GiftBox</string>
+
+    <string name="login">Login</string>
+    <string name="sign_up">Sign Up</string>
+
+    <string name="enter_your_name">Enter your name</string>
+    <string name="Name">Name</string>
+    <string name="sign_up1">Sign Up</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="back_to_login"><![CDATA[Back to login>>]]></string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="password">Password</string>
+    <string name="don_t_have_an_account_sign_up">Don\'t have an account?Sign Up</string>
+    <string name="login1">Login</string>
+    <string name="forgot_password1">Forgot Password?</string>
+    <string name="password1">Password</string>
+    <string name="email">Email</string>
+    <string name="welcome_back">Welcome Back!</string>
+    <string name="your_email">Your Email</string>
+    <string name="no_worries">No Worries!</string>
+
+
+    <string name="back_to_login1">Back to Login</string>
+    <string name="cart">Cart</string>
+    <string name="profile">Profile</string>
+    <string name="popular_gifts">Popular Gifts</string>
+    <string name="birthday">Birthday</string>
+    <string name="corporate">Corporate</string>
+    <string name="anniversary">Anniversary</string>
+    <string name="festival">Festival</string>
+    <string name="categories">Categories</string>
+    <string name="search_for_items">Search for items</string>
+    <string name="hi_user">Hi, User</string>
+    <string name="home">Home</string>
+    <string name="your_cart">Your cart</string>
+    <string name="gift_box_rs_30">Gift Box? +Rs.30</string>
+    <string name="rs_150">Rs.150</string>
+    <string name="teddy_bear">Teddy Bear</string>
+    <string name="_1">1</string>
+    <string name="rs_100">Rs.100</string>
+    <string name="dark_chocolate">Dark Chocolate</string>
+    <string name="chocolate">Chocolate</string>
+    <string name="rs_500">Rs.500</string>
+    <string name="giant_teddy_bear">Giant Teddy Bear</string>
+    <string name="ca">Ca</string>
+    <string name="chocolate_box">Chocolate Box</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
+    <string name="back">Back</string>
+    <string name="buy_now">Buy Now</string>
+    <string name="delivery_fee">Delivery Fee</string>
+    <string name="total_price_rs_850">Total Price: Rs.850</string>
+    <string name="rs_100_1">Rs.100</string>
+    <string name="proceed_to_checkout">Proceed to Checkout</string>
+    <string name="order_summary">Order Summary</string>
+    <string name="shipping">Shipping</string>
+    <string name="subtotal">Subtotal</string>
+    <string name="total">Total</string>
+    <string name="todo">TODO</string>
+    <string name="your_shopping_cart_3_items">Your Shopping Cart (3 items)</string>
+    <string name="npr_2949">NPR.2949</string>
+    <string name="npr_3649">NPR.3649</string>
+    <string name="premium_gift_box">Premium Gift Box</string>
+    <string name="npr_1499">NPR.1499</string>
+    <string name="chocolate_deluxe">Chocolate Deluxe</string>
+    <string name="npr_500">NPR.500</string>
+    <string name="add_personalized_note">Add Personalized note</string>
+    <string name="write_your_note_here">Write your note here</string>
+    <string name="proceed_to_checkout_npr_2949">Proceed to Checkout - NPR.2949</string>
+    <string name="gift_wrapping">Gift Wrapping</string>
+    <string name="npr_850">NPR.850</string>
+    <string name="type_your_personalized_message">Type your personalized message...</string>
+    <string name="npr_100">NPR.100</string>
+
+
+    <string name="app_name">CheckoutPageApp</string>
+    <!-- Shopping Cart Section -->
+    <string name="shopping_cart">Shopping Cart</string>
+    <string name="proceed_to_checkout1">Proceed to Checkout</string>
+    <string name="total_label">Total</string>
+    <!-- Checkout Form Section -->
+    <string name="checkout">Checkout</string>
+    <string name="delivery_information">Delivery Information</string>
+    <string name="full_name">Full Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="payment_method">Payment Method</string>
+    <string name="cash_on_delivery">Cash on Delivery</string>
+    <string name="order_summary1">Order Summary</string>
+    <string name="subtotal_items">Subtotal (%d items)</string>
+    <string name="shipping_fee">Shipping Fee</string>
+    <string name="place_order_with_price">Place Order - %s</string>
+    <string name="send_code">Send Code</string>
+    <string name="please_enter_your_email_address_we_ll_send_you_a_confirmation_code_to_reset_your_password">Please enter your email address. We\'ll send you a confirmation code to reset your password.</string>
+    <string name="check_your_email">Check_your_email</string>
+    <string name="back1">Back</string>
+
+
+</resources>
