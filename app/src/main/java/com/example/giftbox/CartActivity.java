@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -45,7 +46,13 @@ public class CartActivity extends AppCompatActivity {
                 noteInputLayout.setVisibility(View.GONE);
             }
         });
+        ImageView backButton = findViewById(R.id.backButton);
 
+        backButton.setOnClickListener(v -> {
+            Intent intent = new Intent(CartActivity.this, homepage.class);
+            startActivity(intent);
+            finish();   // optional: close Cart so back doesn't return here
+        });
         checkoutButton.setOnClickListener(v -> {
             // code that runs when button is clicked
             Intent intent = new Intent(CartActivity.this, CheckoutActivity.class);

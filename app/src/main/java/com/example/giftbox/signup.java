@@ -2,6 +2,8 @@ package com.example.giftbox;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -16,8 +18,8 @@ import java.util.Objects;
 
 public class signup extends AppCompatActivity {
 
-    private TextInputLayout tilName, tilEmail, tilPassword, tilConfirmPassword;
-    private TextInputEditText etName, etEmail, etPassword, etConfirmPassword;
+    private TextInputLayout tilName, tilPhone, tilEmail, tilPassword, tilConfirmPassword; // PHONE
+    private TextInputEditText etName, etPhone, etEmail, etPassword, etConfirmPassword;   // PHONE
     @SuppressWarnings("FieldCanBeLocal")
     private MaterialButton btnSignup;
 
@@ -31,33 +33,31 @@ public class signup extends AppCompatActivity {
 
         // Fixed IDs - now matches your XML
         tilName = findViewById(R.id.tilName);
+        tilPhone = findViewById(R.id.tilPhone);   // PHONE
         tilEmail = findViewById(R.id.tilEmail);
         tilPassword = findViewById(R.id.tilPassword);
         tilConfirmPassword = findViewById(R.id.tilConfirmPassword);
 
         etName = findViewById(R.id.etName);
+        etPhone = findViewById(R.id.etPhone);     // PHONE
         etEmail = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
         etConfirmPassword = findViewById(R.id.etConfirmPassword);
 
         btnSignup = findViewById(R.id.btnSignup);
 
-        // ADD THIS RIGHT AFTER findViewById() lines
+        // Error icons
         tilName.setErrorIconDrawable(com.google.android.material.R.drawable.mtrl_ic_error);
+        tilPhone.setErrorIconDrawable(com.google.android.material.R.drawable.mtrl_ic_error);   // PHONE
         tilEmail.setErrorIconDrawable(com.google.android.material.R.drawable.mtrl_ic_error);
         tilPassword.setErrorIconDrawable(com.google.android.material.R.drawable.mtrl_ic_error);
         tilConfirmPassword.setErrorIconDrawable(com.google.android.material.R.drawable.mtrl_ic_error);
 
         tilName.setErrorTextColor(androidx.core.content.ContextCompat.getColorStateList(this, android.R.color.holo_red_dark));
+        tilPhone.setErrorTextColor(androidx.core.content.ContextCompat.getColorStateList(this, android.R.color.holo_red_dark)); // PHONE
         tilEmail.setErrorTextColor(androidx.core.content.ContextCompat.getColorStateList(this, android.R.color.holo_red_dark));
         tilPassword.setErrorTextColor(androidx.core.content.ContextCompat.getColorStateList(this, android.R.color.holo_red_dark));
         tilConfirmPassword.setErrorTextColor(androidx.core.content.ContextCompat.getColorStateList(this, android.R.color.holo_red_dark));
-        // Back to Login
-        findViewById(R.id.textView).setOnClickListener(v -> {
-            startActivity(new Intent(signup.this, login.class));
-            finish();
-            overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
-        });
 
         // Sign Up Button
         btnSignup.setOnClickListener(v -> {
@@ -67,6 +67,18 @@ public class signup extends AppCompatActivity {
                 finish();
             }
         });
+
+        TextView tvLoginLink = findViewById(R.id.tvLoginLink);
+
+        tvLoginLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(signup.this, login.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, 0, systemBars.right, systemBars.bottom);
@@ -76,15 +88,16 @@ public class signup extends AppCompatActivity {
 
     private boolean validateSignup() {
         String name = Objects.requireNonNull(etName.getText()).toString().trim();
+        String phone = Objects.requireNonNull(etPhone.getText()).toString().trim();        // PHONE
         String email = Objects.requireNonNull(etEmail.getText()).toString().trim();
         String password = Objects.requireNonNull(etPassword.getText()).toString().trim();
         String confirm = Objects.requireNonNull(etConfirmPassword.getText()).toString().trim();
 
         // Clear old errors
         tilName.setError(null);
+        tilPhone.setError(null);
         tilEmail.setError(null);
         tilPassword.setError(null);
-
         tilConfirmPassword.setError(null);
 
         if (name.isEmpty()) {
@@ -92,6 +105,19 @@ public class signup extends AppCompatActivity {
             Toast.makeText(this, "Name cannot be empty", Toast.LENGTH_SHORT).show();
             return false;
         }
+
+        // PHONE validations
+        if (phone.isEmpty()) {
+            tilPhone.setError("Phone number cannot be empty");
+            Toast.makeText(this, "Phone number cannot be empty", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if (phone.length() < 7) {
+            tilPhone.setError("Please enter a valid phone number");
+            Toast.makeText(this, "Please enter a valid phone number", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
         if (email.isEmpty()) {
             tilEmail.setError("Email cannot be empty");
             Toast.makeText(this, "Email cannot be empty", Toast.LENGTH_SHORT).show();

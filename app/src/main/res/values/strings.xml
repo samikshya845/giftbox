@@ -14,7 +14,7 @@
     <string name="enter_your_name">Enter your name</string>
     <string name="Name">Name</string>
     <string name="sign_up1">Sign Up</string>
-    <string name="confirm_password">Confirm Password</string>
+
     <string name="back_to_login"><![CDATA[Back to login>>]]></string>
     <string name="forgot_password">Forgot Password?</string>
     <string name="password">Password</string>
@@ -101,6 +101,36 @@
     <string name="please_enter_your_email_address_we_ll_send_you_a_confirmation_code_to_reset_your_password">Please enter your email address. We\'ll send you a confirmation code to reset your password.</string>
     <string name="check_your_email">Check_your_email</string>
     <string name="back1">Back</string>
+    <string name="already_have_an_account_sign_in">Already have an account? Sign In</string>
+    <string name="i_agree_to_terms_and_privacy_policy">I agree to Terms and Privacy Policy</string>
+    <string name="confirm_password">Confirm Password\n</string>
+    <string name="create_an_account">Create an Account</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="send_message">send message\n</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="fullname">Full name</string>
+    <string name="phone">Phone</string>
+    <string name="address">Address</string>
+    <string name="important_dates">Important dates..</string>
+    <string name="Email">Email</string>
+    <string name="save_changes">Save changes</string>
+    <string name="city">City</string>
+    <string name="change_password">CHANGE PASSWORD</string>
+    <string name="Confirm_password">Confirm Password</string>
+    <string name="giftbox_is_your_trusted_gifting_and_surprise_delivery_partner_helping_you_send_thoughtful_gifts_and_treats_straight_to_the_people_you_care_about_from_birthdays_and_anniversaries_to_thank_you_surprises_and_corporate_hampers_giftbox_makes_every_occasion_simple_beautiful_and_on_time_based_in_chitwan_and_serving_key_cities_across_nepal_giftbox_connects_you_with_curated_gift_combos_cakes_flowers_and_personalized_products_from_verified_local_stores_our_platform_is_designed_to_be_clean_and_easy_to_use_so_you_can_browse_categories_compare_options_and_place_an_order_in_just_a_few_taps_every_order_is_handled_by_our_dedicated_delivery_team_who_work_to_ensure_your_gifts_arrive_fresh_neatly_packed_and_at_the_right_moment_you_can_track_your_order_save_delivery_addresses_and_manage_special_occasions_directly_inside_the_app_so_you_never_miss_an_important_date_we_are_committed_to_fair_pricing_transparent_delivery_charges_and_responsive_support_whether_you_are_planning_a_last_minute_birthday_surprise_or_sending_appreciation_to_your_team_giftbox_aims_to_make_gifting_smooth_reliable_and_memorable_so_your_feelings_reach_your_loved_ones_exactly_when_they_matter_most">GiftBox is your trusted gifting and surprise-delivery partner, helping you send thoughtful gifts and treats straight to the people you care about. From birthdays and anniversaries to thank‑you surprises and corporate hampers, GiftBox makes every occasion simple, beautiful, and on time. Based in Chitwan and serving key cities across Nepal, GiftBox connects you with curated gift combos, cakes, flowers, and personalized products from verified local stores. Our platform is designed to be clean and easy to use so you can browse categories, compare options, and place an order in just a few taps. Every order is handled by our dedicated delivery team, who work to ensure your gifts arrive fresh, neatly packed, and at the right moment. You can track your order, save delivery addresses, and manage special occasions directly inside the app so you never miss an important date. We are committed to fair pricing, transparent delivery charges, and responsive support. Whether you are planning a last‑minute birthday surprise or sending appreciation to your team, GiftBox aims to make gifting smooth, reliable, and memorable—so your feelings reach your loved ones, exactly when they matter most.</string>
+    <string name="about_us">About Us</string>
+    <string name="Back">Back</string>
+    <string name="_2_how_do_i_place_an_order">2. How do I place an order?</string>
+    <string name="giftbox_is_a_simple_app_to_help_you_select_schedule_and_send_gifts_to_your_loved_ones">GiftBox is a simple app to help you select, schedule and send gifts to your loved ones.</string>
+    <string name="choose_a_category_pick_your_gift_fill_in_the_delivery_details_and_confirm_your_order_from_the_cart">Choose a category, pick your gift, fill in the delivery details and confirm your order from the cart.</string>
+    <string name="_1_what_is_giftbox">1. What is GiftBox?</string>
+    <string name="faqs">FAQs</string>
+    <string name="submit">Submit</string>
+    <string name="write_your_feedback_here">Write your feedback here</string>
+    <string name="your_email_optional">Your email (optional)</string>
+    <string name="your_name_optional">Your name (optional)</string>
+    <string name="tell_us_what_you_think_about_giftbox">Tell us what you think about GiftBox.</string>
+    <string name="feedback">Feedback</string>
 
 
 </resources>

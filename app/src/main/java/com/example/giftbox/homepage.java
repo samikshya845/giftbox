@@ -3,7 +3,9 @@ package com.example.giftbox;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -40,8 +42,46 @@ public class homepage extends AppCompatActivity {
             startActivity(intent);
             overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
         });
+        View ivNotification = findViewById(R.id.ivNotification);
+
+        ivNotification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(homepage.this, MoreActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
+
+        LinearLayout categoryBirthday    = findViewById(R.id.category_birthday);
+        LinearLayout categoryAnniversary = findViewById(R.id.category_anniversary);
+        LinearLayout categoryCorporate   = findViewById(R.id.category_corporate);
+        LinearLayout categorySeasonal    = findViewById(R.id.category_seasonal);  // ids from XML[file:76]
+
+        categoryBirthday.setOnClickListener(v -> {
+            Intent i = new Intent(homepage.this, BirthdayCategoryActivity.class);
+            i.putExtra("username", username);
+            startActivity(i);
+        });
+
+        categoryAnniversary.setOnClickListener(v -> {
+            Intent i = new Intent(homepage.this, AnniversaryCategoryActivity.class);
+            i.putExtra("username", username);
+            startActivity(i);
+        });
+
+        categoryCorporate.setOnClickListener(v -> {
+            Intent i = new Intent(homepage.this, CorporateCategoryActivity.class);
+            i.putExtra("username", username);
+            startActivity(i);
+        });
+
+        categorySeasonal.setOnClickListener(v -> {
+            Intent i = new Intent(homepage.this, SeasonalCategoryActivity.class);
+            i.putExtra("username", username);
+            startActivity(i);
+        });
         BottomNavigationView bottomNavigation = findViewById(R.id.bottomNavigation);
         bottomNavigation.setSelectedItemId(R.id.nav_home);
 
@@ -60,8 +100,29 @@ public class homepage extends AppCompatActivity {
                 return true;
             }
 
+            if (itemId == R.id.nav_chat) {
+                Intent intent = new Intent(homepage.this, ChatActivity.class);
+                intent.putExtra("username", username);   // optional
+                startActivity(intent);
+                overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                return true;
+            }
 
+            if (itemId == R.id.nav_orders) {
+                Intent intent = new Intent(homepage.this, MyOrdersActivity.class);
+                intent.putExtra("username", username);
+                startActivity(intent);
+                overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                return true;
+            }
 
+            if (itemId == R.id.nav_fav) {
+                Intent intent = new Intent(homepage.this, FavouritesActivity.class);
+                intent.putExtra("username", username);
+                startActivity(intent);
+                overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                return true;
+            }
             return false;
         });
     }

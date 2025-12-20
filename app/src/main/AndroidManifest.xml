@@ -12,13 +12,70 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Giftbox">
         <activity
+            android:name=".FavouritesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NotificationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DeliveryChargeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FeedbackActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PrivacyPolicyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TermsandConditionsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AboutUSActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MoreActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MyOrdersActivity"
+            android:exported="false" />
+        <activity
+            android:name=".OrderHistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ChangepasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditprofileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CorporateCategoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SeasonalCategoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AnniversaryCategoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BirthdayCategoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ChatActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Product1Activity"
+            android:exported="false" />
+        <activity
+            android:name=".FaqActivity"
+            android:exported="true" />
+        <activity
             android:name=".NewPasswordActivity"
             android:exported="false" />
         <activity
             android:name=".ResetPasswordActivity"
-            android:exported="false" />
-        <activity
-            android:name=".GetStartedActivity"
             android:exported="false" />
         <activity android:name=".VerificationActivity" />
         <activity
@@ -26,9 +83,6 @@
             android:exported="false" />
         <activity
             android:name=".CartActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ProfileActivity"
             android:exported="false" />
         <activity
             android:name=".forgotpassword"

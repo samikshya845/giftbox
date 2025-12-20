@@ -1,6 +1,7 @@
 package com.example.giftbox;
 
 import android.os.Bundle;
+import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,13 +9,24 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class GetStartedActivity extends AppCompatActivity {
+public class NotificationActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_get_started);
+        setContentView(R.layout.activity_notification);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+        ImageView ivBack = findViewById(R.id.ivBackNotifications);
+
+        ivBack.setOnClickListener(v -> {
+            onBackPressed();   // or: finish();
+        });
+
+        findViewById(R.id.main);// this matches the id above
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
