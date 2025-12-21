@@ -1,5 +1,6 @@
 package com.example.giftbox;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.ImageView;
 
@@ -16,6 +17,7 @@ public class BirthdayCategoryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_birthday_category); // your XML above
 
         ImageView ivBack = findViewById(R.id.ivBack);
-        ivBack.setOnClickListener(v -> finish());   // go back to previous Activity
+        ivBack.setOnClickListener(v -> onBackPressed());
+
     }
 }

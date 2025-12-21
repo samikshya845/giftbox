@@ -289,12 +289,27 @@
                             android:orientation="vertical"
                             android:padding="8dp">
 
-                            <ImageView
-                                android:id="@+id/flower_image"
+                            <!-- IMAGE + FAV -->
+                            <FrameLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="120dp"
-                                android:scaleType="centerCrop"
-                                android:src="@drawable/flower" />
+                                android:layout_height="120dp">
+
+                                <ImageView
+                                    android:id="@+id/flower_image"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/flower" />
+
+                                <ImageView
+                                    android:id="@+id/ivFavFlower"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_gravity="top|end"
+                                    android:layout_margin="8dp"
+                                    android:src="@drawable/ic_favourites_border"
+                                    android:contentDescription="@string/favourite" />
+                            </FrameLayout>
 
                             <TextView
                                 android:id="@+id/flower_name"
@@ -345,12 +360,27 @@
                             android:orientation="vertical"
                             android:padding="8dp">
 
-                            <ImageView
-                                android:id="@+id/chocolate_image"
+                            <!-- IMAGE + FAV -->
+                            <FrameLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="120dp"
-                                android:scaleType="centerCrop"
-                                android:src="@drawable/chocolate" />
+                                android:layout_height="120dp">
+
+                                <ImageView
+                                    android:id="@+id/chocolate_image"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/chocolate" />
+
+                                <ImageView
+                                    android:id="@+id/ivFavChocolate"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_gravity="top|end"
+                                    android:layout_margin="8dp"
+                                    android:src="@drawable/ic_favourites_border"
+                                    android:contentDescription="@string/favourite" />
+                            </FrameLayout>
 
                             <TextView
                                 android:id="@+id/chocolate_name"
@@ -408,12 +438,27 @@
                             android:orientation="vertical"
                             android:padding="8dp">
 
-                            <ImageView
-                                android:id="@+id/teddy_image"
+                            <!-- IMAGE + FAV -->
+                            <FrameLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="120dp"
-                                android:scaleType="centerCrop"
-                                android:src="@drawable/teddy" />
+                                android:layout_height="120dp">
+
+                                <ImageView
+                                    android:id="@+id/teddy_image"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/teddy" />
+
+                                <ImageView
+                                    android:id="@+id/ivFavTeddy"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_gravity="top|end"
+                                    android:layout_margin="8dp"
+                                    android:src="@drawable/ic_favourites_border"
+                                    android:contentDescription="@string/favourite" />
+                            </FrameLayout>
 
                             <TextView
                                 android:id="@+id/teddy_name"
@@ -464,12 +509,27 @@
                             android:orientation="vertical"
                             android:padding="8dp">
 
-                            <ImageView
-                                android:id="@+id/watch_image"
+                            <!-- IMAGE + FAV -->
+                            <FrameLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="120dp"
-                                android:scaleType="centerCrop"
-                                android:src="@drawable/watch" />
+                                android:layout_height="120dp">
+
+                                <ImageView
+                                    android:id="@+id/watch_image"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/watch" />
+
+                                <ImageView
+                                    android:id="@+id/ivFavWatch"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_gravity="top|end"
+                                    android:layout_margin="8dp"
+                                    android:src="@drawable/ic_favourites_border"
+                                    android:contentDescription="@string/favourite" />
+                            </FrameLayout>
 
                             <TextView
                                 android:id="@+id/watch_name"
@@ -527,12 +587,27 @@
                             android:orientation="vertical"
                             android:padding="8dp">
 
-                            <ImageView
-                                android:id="@+id/perfume_image"
+                            <!-- IMAGE + FAV -->
+                            <FrameLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="120dp"
-                                android:scaleType="centerCrop"
-                                android:src="@drawable/perfume" />
+                                android:layout_height="120dp">
+
+                                <ImageView
+                                    android:id="@+id/perfume_image"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/perfume" />
+
+                                <ImageView
+                                    android:id="@+id/ivFavPerfume"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_gravity="top|end"
+                                    android:layout_margin="8dp"
+                                    android:src="@drawable/ic_favourites_border"
+                                    android:contentDescription="@string/favourite" />
+                            </FrameLayout>
 
                             <TextView
                                 android:id="@+id/perfume_name"
@@ -583,12 +658,27 @@
                             android:orientation="vertical"
                             android:padding="8dp">
 
-                            <ImageView
-                                android:id="@+id/jewelry_image"
+                            <!-- IMAGE + FAV -->
+                            <FrameLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="120dp"
-                                android:scaleType="centerCrop"
-                                android:src="@drawable/jeweller_box" />
+                                android:layout_height="120dp">
+
+                                <ImageView
+                                    android:id="@+id/jewelry_image"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/jeweller_box" />
+
+                                <ImageView
+                                    android:id="@+id/ivFavJewelry"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_gravity="top|end"
+                                    android:layout_margin="8dp"
+                                    android:src="@drawable/ic_favourites_border"
+                                    android:contentDescription="@string/favourite" />
+                            </FrameLayout>
 
                             <TextView
                                 android:id="@+id/jewelry_name"
@@ -646,12 +736,27 @@
                             android:orientation="vertical"
                             android:padding="8dp">
 
-                            <ImageView
-                                android:id="@+id/cake_image"
+                            <!-- IMAGE + FAV -->
+                            <FrameLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="120dp"
-                                android:scaleType="centerCrop"
-                                android:src="@drawable/cake_image" />
+                                android:layout_height="120dp">
+
+                                <ImageView
+                                    android:id="@+id/cake_image"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/cake_image" />
+
+                                <ImageView
+                                    android:id="@+id/ivFavCake"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_gravity="top|end"
+                                    android:layout_margin="8dp"
+                                    android:src="@drawable/ic_favourites_border"
+                                    android:contentDescription="@string/favourite" />
+                            </FrameLayout>
 
                             <TextView
                                 android:id="@+id/cake_name"
@@ -702,12 +807,27 @@
                             android:orientation="vertical"
                             android:padding="8dp">
 
-                            <ImageView
-                                android:id="@+id/frame_image"
+                            <!-- IMAGE + FAV -->
+                            <FrameLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="120dp"
-                                android:scaleType="centerCrop"
-                                android:src="@drawable/photo_frame" />
+                                android:layout_height="120dp">
+
+                                <ImageView
+                                    android:id="@+id/frame_image"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/photo_frame" />
+
+                                <ImageView
+                                    android:id="@+id/ivFavFrame"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_gravity="top|end"
+                                    android:layout_margin="8dp"
+                                    android:src="@drawable/ic_favourites_border"
+                                    android:contentDescription="@string/favourite" />
+                            </FrameLayout>
 
                             <TextView
                                 android:id="@+id/frame_name"
@@ -765,12 +885,27 @@
                             android:orientation="vertical"
                             android:padding="8dp">
 
-                            <ImageView
-                                android:id="@+id/giftbox_image"
+                            <!-- IMAGE + FAV -->
+                            <FrameLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="120dp"
-                                android:scaleType="centerCrop"
-                                android:src="@drawable/gift_placeholder" />
+                                android:layout_height="120dp">
+
+                                <ImageView
+                                    android:id="@+id/giftbox_image"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/gift_placeholder" />
+
+                                <ImageView
+                                    android:id="@+id/ivFavGiftbox"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_gravity="top|end"
+                                    android:layout_margin="8dp"
+                                    android:src="@drawable/ic_favourites_border"
+                                    android:contentDescription="@string/favourite" />
+                            </FrameLayout>
 
                             <TextView
                                 android:id="@+id/giftbox_name"
@@ -821,12 +956,27 @@
                             android:orientation="vertical"
                             android:padding="8dp">
 
-                            <ImageView
-                                android:id="@+id/card_image"
+                            <!-- IMAGE + FAV -->
+                            <FrameLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="120dp"
-                                android:scaleType="centerCrop"
-                                android:src="@drawable/greeting_card"/>
+                                android:layout_height="120dp">
+
+                                <ImageView
+                                    android:id="@+id/card_image"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/greeting_card" />
+
+                                <ImageView
+                                    android:id="@+id/ivFavCard"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_gravity="top|end"
+                                    android:layout_margin="8dp"
+                                    android:src="@drawable/ic_favourites_border"
+                                    android:contentDescription="@string/favourite" />
+                            </FrameLayout>
 
                             <TextView
                                 android:id="@+id/card_name"
@@ -865,6 +1015,7 @@
 
             </LinearLayout>
         </ScrollView>
+
 
     </LinearLayout>
 

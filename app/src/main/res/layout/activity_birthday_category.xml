@@ -9,82 +9,96 @@
     android:background="#F8E4FF"
     tools:context=".BirthdayCategoryActivity">
 
-    <!-- Gradient header with back + text + search -->
-
-    <!-- Scrollable grid of cards under header -->
+    <!-- Header -->
     <RelativeLayout
         android:id="@+id/header"
-        android:layout_width="414dp"
-        android:layout_height="170dp"
+        android:layout_width="0dp"
+        android:layout_height="154dp"
         android:background="@drawable/header_gradient"
-        android:padding="16dp">
-
-        <!-- Back button -->
-
-        <!-- Texts: Gift Category / Birthday Gifts -->
-
-        <!-- Search bar -->
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/ivBack"
-            android:layout_width="49dp"
-            android:layout_height="46dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="27dp"
-            android:layout_marginTop="18dp"
-            android:padding="6dp"
+            android:layout_width="55dp"
+            android:layout_marginTop="15dp"
+            android:layout_height="55dp"
+            android:contentDescription="@string/back"
+            android:padding="8dp"
             android:src="@drawable/back_arrow"
-            app:tint="#6B2D92" />
+            android:background="@drawable/circle_white"/>
 
         <LinearLayout
             android:id="@+id/title_container"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="25dp"
-            android:layout_marginStart="34dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginEnd="25dp"
-            android:layout_marginBottom="25dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
             android:layout_toEndOf="@id/ivBack"
             android:orientation="vertical">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/gift_category"
+                android:textColor="@android:color/white"
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/tvCategory"
-                android:layout_width="match_parent"
-                android:layout_height="47dp"
-                android:text="Birthday Gifts"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:text="@string/birthday_gifts"
                 android:textColor="@android:color/white"
-                android:textSize="22sp"
+                android:textSize="24sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
-        <EditText
-            android:id="@+id/search_bar"
+        <!-- Search bar -->
+        <LinearLayout
+            android:id="@+id/search_container"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
+            android:layout_height="48dp"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
             android:background="@drawable/search_background"
-            android:drawableStart="@drawable/ic_search_24"
-            android:drawablePadding="12dp"
-            android:hint="Search for gifts..."
+            android:gravity="center_vertical"
             android:paddingStart="16dp"
-            android:paddingEnd="16dp" />
+            android:paddingEnd="16dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:contentDescription="@string/search_birthday_gifts"
+                android:src="@drawable/ic_search_24"
+                tools:ignore="ContentDescription" />
+
+            <EditText
+                android:id="@+id/etSearch"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:hint="@string/search_birthday_gifts"
+               android:paddingStart="8dp"
+                android:singleLine="true"
+                android:textColor="@android:color/white"
+                android:textColorHint="#EDE0FF"
+                android:textSize="14sp"
+                tools:ignore="RtlSymmetry" />
+        </LinearLayout>
+
     </RelativeLayout>
 
+    <!-- Vertical Scroll with birthday gifts -->
     <ScrollView
         android:id="@+id/vertical_scroll_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="12dp"
-        android:scrollbars="none"
         android:fillViewport="true"
+        android:scrollbars="none"
         app:layout_constraintTop_toBottomOf="@id/header"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -97,61 +111,80 @@
             android:paddingStart="8dp"
             android:paddingEnd="8dp">
 
-            <!-- Row 1 -->
+            <!-- Row 1: Mystery + Cake -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="25dp">
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal">
 
-                <!-- Mystery Birthday Gift box -->
+                <!-- Mystery Birthday Box -->
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:layout_weight="1"
                     app:cardCornerRadius="12dp"
-                    app:cardElevation="6dp">
+                    app:cardElevation="5dp">
 
-                    <LinearLayout
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
                         android:padding="8dp">
 
                         <ImageView
+                            android:id="@+id/imgMysteryBox"
                             android:layout_width="match_parent"
-                            android:layout_height="120dp"
+                            android:layout_height="110dp"
                             android:scaleType="centerCrop"
                             android:src="@drawable/mystery_box" />
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:text="Mystery Birthday Gift box"
-                            android:textColor="#333333"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
+                        <ImageView
+                            android:id="@+id/favMystery"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_alignTop="@id/imgMysteryBox"
+                            android:layout_alignEnd="@id/imgMysteryBox"
+                            android:layout_margin="6dp"
+                            android:background="@drawable/circle_white"
+                            android:padding="3dp"
+                            android:src="@drawable/ic_favourites_border" />
 
-                        <TextView
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:text="NPR.1499"
-                            android:textColor="#6A4C93"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-
-                        <Button
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_below="@id/imgMysteryBox"
                             android:layout_marginTop="8dp"
-                            android:background="@drawable/gradient_purple_pink"
-                            android:text="Add to Cart"
-                            android:textColor="@android:color/white"
-                            android:textSize="12sp" />
-                    </LinearLayout>
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/mystery_birthday_box"
+                                android:textColor="#333333"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="@string/Npr_1499"
+                                android:textColor="#6A4C93"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <Button
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:background="@drawable/gradient_purple_pink"
+                                android:text="Add to Cart"
+                                android:textColor="@android:color/white"
+                                android:textSize="12sp"
+                                tools:ignore="DuplicateSpeakableTextCheck,HardcodedText" />
+                        </LinearLayout>
+                    </RelativeLayout>
                 </androidx.cardview.widget.CardView>
 
                 <!-- Birthday Cake -->
@@ -161,56 +194,503 @@
                     android:layout_margin="8dp"
                     android:layout_weight="1"
                     app:cardCornerRadius="12dp"
-                    app:cardElevation="6dp">
+                    app:cardElevation="5dp">
 
-                    <LinearLayout
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
                         android:padding="8dp">
 
                         <ImageView
+                            android:id="@+id/imgCake"
                             android:layout_width="match_parent"
-                            android:layout_height="120dp"
+                            android:layout_height="110dp"
                             android:scaleType="centerCrop"
                             android:src="@drawable/cake_image" />
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:text="Birthday Cake"
-                            android:textColor="#333333"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
+                        <ImageView
+                            android:id="@+id/favCake"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_alignTop="@id/imgCake"
+                            android:layout_alignEnd="@id/imgCake"
+                            android:layout_margin="6dp"
+                            android:background="@drawable/circle_white"
+                            android:padding="3dp"
+                            android:src="@drawable/ic_favourites_border" />
 
-                        <TextView
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:text="NPR.2500"
-                            android:textColor="#6A4C93"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-
-                        <Button
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_below="@id/imgCake"
                             android:layout_marginTop="8dp"
-                            android:background="@drawable/gradient_purple_pink"
-                            android:text="Add to Cart"
-                            android:textColor="@android:color/white"
-                            android:textSize="12sp" />
-                    </LinearLayout>
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/birthday_cake"
+                                android:textColor="#333333"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="@string/npr_550"
+                                android:textColor="#6A4C93"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <Button
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:background="@drawable/gradient_purple_pink"
+                                android:text="@string/add_to_cart"
+                                android:textColor="@android:color/white"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                    </RelativeLayout>
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
 
-            <!-- add your other rows (Balloon, Flower, Chocolate, Party Supplies, etc.)
-                 reusing the same CardView pattern -->
+            <!-- Row 2: Bundle + Kids -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <!-- Gift Bundle -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="5dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp">
+
+                        <ImageView
+                            android:id="@+id/imgBundle"
+                            android:layout_width="match_parent"
+                            android:layout_height="110dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/giftbox_image" />
+
+                        <ImageView
+                            android:id="@+id/favBundle"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_alignTop="@id/imgBundle"
+                            android:layout_alignEnd="@id/imgBundle"
+                            android:layout_margin="6dp"
+                            android:background="@drawable/circle_white"
+                            android:padding="3dp"
+                            android:src="@drawable/ic_favourites_border" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/imgBundle"
+                            android:layout_marginTop="8dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/birthday_gift_bundle"
+                                android:textColor="#333333"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="@string/npr_1999"
+                                android:textColor="#6A4C93"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <Button
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:background="@drawable/gradient_purple_pink"
+                                android:text="@string/add_to_cart"
+                                android:textColor="@android:color/white"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Kids Pack -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="5dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp">
+
+                        <ImageView
+                            android:id="@+id/imgKids"
+                            android:layout_width="match_parent"
+                            android:layout_height="110dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/kids_birthday" />
+
+                        <ImageView
+                            android:id="@+id/favKids"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_alignTop="@id/imgKids"
+                            android:layout_alignEnd="@id/imgKids"
+                            android:layout_margin="6dp"
+                            android:background="@drawable/circle_white"
+                            android:padding="3dp"
+                            android:src="@drawable/ic_favourites_border" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/imgKids"
+                            android:layout_marginTop="8dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/kids_birthday_pack"
+                                android:textColor="#333333"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="@string/npr_1699"
+                                android:textColor="#6A4C93"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <Button
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:background="@drawable/gradient_purple_pink"
+                                android:text="@string/add_to_cart"
+                                android:textColor="@android:color/white"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <!-- Row 3: Flowers + Balloons -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <!-- Flower Bouquet -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="5dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp">
+
+                        <ImageView
+                            android:id="@+id/imgFlowers"
+                            android:layout_width="match_parent"
+                            android:layout_height="110dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/flowers_birthday" />
+
+                        <ImageView
+                            android:id="@+id/favFlowers"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_alignTop="@id/imgFlowers"
+                            android:layout_alignEnd="@id/imgFlowers"
+                            android:layout_margin="6dp"
+                            android:background="@drawable/circle_white"
+                            android:padding="3dp"
+                            android:src="@drawable/ic_favourites_border" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/imgFlowers"
+                            android:layout_marginTop="8dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/birthday_flower_bouquet"
+                                android:textColor="#333333"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="@string/npr_1299"
+                                android:textColor="#6A4C93"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <Button
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:background="@drawable/gradient_purple_pink"
+                                android:text="@string/add_to_cart"
+                                android:textColor="@android:color/white"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Balloons Set -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="5dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp">
+
+                        <ImageView
+                            android:id="@+id/imgBalloons"
+                            android:layout_width="match_parent"
+                            android:layout_height="110dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/balloons_birthday" />
+
+                        <ImageView
+                            android:id="@+id/favBalloons"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_alignTop="@id/imgBalloons"
+                            android:layout_alignEnd="@id/imgBalloons"
+                            android:layout_margin="6dp"
+                            android:background="@drawable/circle_white"
+                            android:padding="3dp"
+                            android:src="@drawable/ic_favourites_border" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/imgBalloons"
+                            android:layout_marginTop="8dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/birthday_balloons_set"
+                                android:textColor="#333333"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="@string/npr_1799"
+                                android:textColor="#6A4C93"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <Button
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:background="@drawable/gradient_purple_pink"
+                                android:text="@string/add_to_cart"
+                                android:textColor="@android:color/white"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <!-- Row 4: Candles + Chocolates -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal">
+
+                <!-- Candles Pack -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="5dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp">
+
+                        <ImageView
+                            android:id="@+id/imgCandles"
+                            android:layout_width="match_parent"
+                            android:layout_height="110dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/candles" />
+
+                        <ImageView
+                            android:id="@+id/favCandles"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_alignTop="@id/imgCandles"
+                            android:layout_alignEnd="@id/imgCandles"
+                            android:layout_margin="6dp"
+                            android:background="@drawable/circle_white"
+                            android:padding="3dp"
+                            android:src="@drawable/ic_favourites_border" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/imgCandles"
+                            android:layout_marginTop="8dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/birthday_candles_pack"
+                                android:textColor="#333333"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="@string/npr_299"
+                                android:textColor="#6A4C93"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <Button
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:background="@drawable/gradient_purple_pink"
+                                android:text="@string/add_to_cart"
+                                android:textColor="@android:color/white"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Chocolates Box -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="5dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp">
+
+                        <ImageView
+                            android:id="@+id/imgChocolates"
+                            android:layout_width="match_parent"
+                            android:layout_height="110dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/chocolate1" />
+
+                        <ImageView
+                            android:id="@+id/favChocolates"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_alignTop="@id/imgChocolates"
+                            android:layout_alignEnd="@id/imgChocolates"
+                            android:layout_margin="6dp"
+                            android:background="@drawable/circle_white"
+                            android:padding="3dp"
+                            android:src="@drawable/ic_favourites_border" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/imgChocolates"
+                            android:layout_marginTop="8dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/premium_chocolates_box"
+                                android:textColor="#333333"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="@string/npr_999"
+                                android:textColor="#6A4C93"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <Button
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:background="@drawable/gradient_purple_pink"
+                                android:text="@string/add_to_cart"
+                                android:textColor="@android:color/white"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

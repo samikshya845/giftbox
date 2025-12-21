@@ -13,7 +13,7 @@
     <!-- Empty state in center -->
     <LinearLayout
         android:id="@+id/headerFavourites"
-        android:layout_width="413dp"
+        android:layout_width="match_parent"
         android:layout_height="104dp"
         android:background="@drawable/gradient_purple_pink"
         android:gravity="center_vertical"
@@ -31,13 +31,14 @@
             android:layout_height="39dp"
             android:contentDescription="Back"
             android:src="@drawable/back_arrow"
-            app:tint="@android:color/white" />
+            app:tint="@android:color/white"
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:text="Favourites"
+            android:text="@string/favourites"
             android:textColor="@android:color/white"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -60,13 +61,13 @@
             android:layout_height="140dp"
             android:src="@drawable/fav_icon"
         app:tint="#6A4C93"
-        android:contentDescription="No favourites" />
+        android:contentDescription="@string/no_favourites" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:text="No favourites yet!"
+            android:text="@string/no_favourites_yet"
             android:textColor="#222222"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -75,7 +76,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Tap the heart icon on gifts to save them here."
+            android:text="@string/tap_the_heart_icon_on_gifts_to_save_them_here"
             android:textColor="#888888"
             android:textSize="13sp" />
     </LinearLayout>

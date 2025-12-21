@@ -131,6 +131,45 @@
     <string name="your_name_optional">Your name (optional)</string>
     <string name="tell_us_what_you_think_about_giftbox">Tell us what you think about GiftBox.</string>
     <string name="feedback">Feedback</string>
-
+    <string name="please_read_these_terms_and_conditions_carefully_before_using_giftbox">Please read these terms and conditions carefully before using GiftBox.</string>
+    <string name="terms_and_conditions">Terms and Conditions</string>
+    <string name="payment_related_issues_with_your_bank_or_wallet_are_handled_by_the_respective_provider">• Payment related issues with your bank or wallet are handled by the respective provider.</string>
+    <string name="_4_privacy">4. Privacy</string>
+    <string name="your_personal_data_is_used_only_to_process_orders_and_improve_our_service">• Your personal data is used only to process orders and improve our service.</string>
+    <string name="_5_changes_to_terms">5. Changes to terms</string>
+    <string name="giftbox_may_update_these_terms_from_time_to_time_inside_the_app">• GiftBox may update these terms from time to time inside the app.</string>
+    <string name="all_prices_offers_and_delivery_charges_are_shown_inside_the_app">• All prices, offers and delivery charges are shown inside the app.</string>
+    <string name="_3_payments">3. Payments</string>
+    <string name="orders_may_not_be_editable_or_cancellable_after_a_certain_time">• Orders may not be editable or cancellable after a certain time.</string>
+    <string name="please_check_delivery_address_date_and_time_carefully_before_confirming_an_order">• Please check delivery address, date and time carefully before confirming an order.</string>
+    <string name="_2_orders">2. Orders</string>
+    <string name="by_using_giftbox_you_agree_to_follow_all_terms_mentioned_on_this_page">• By using GiftBox you agree to follow all terms mentioned on this page.</string>
+    <string name="giftbox_is_a_gift_ordering_application_designed_to_help_you_send_gifts_easily">• GiftBox is a gift-ordering application designed to help you send gifts easily.</string>
+    <string name="_1_general">1. General</string>
+    <string name="no_favourites">No favourites</string>
+    <string name="no_favourites_yet">No favourites yet!</string>
+    <string name="tap_the_heart_icon_on_gifts_to_save_them_here">Tap the heart icon on gifts to save them here.</string>
+    <string name="favourites">Favourites</string>
+    <string name="add_to_cart">Add to Cart</string>
+    <string name="birthday_balloons_set">Birthday Balloons Set</string>
+    <string name="gift_category">Gift Category</string>
+    <string name="birthday_gifts">Birthday Gifts</string>
+    <string name="search_birthday_gifts">Search birthday gifts...</string>
+    <string name="mystery_birthday_box">Mystery Birthday Box</string>
+    <string name="Npr_1499">NPR.1499</string>
+    <string name="npr_550">NPR.550</string>
+    <string name="birthday_cake">Birthday Cake</string>
+    <string name="birthday_gift_bundle">Birthday Gift Bundle</string>
+    <string name="npr_1999">NPR.1999</string>
+    <string name="kids_birthday_pack">Kids Birthday Pack</string>
+    <string name="npr_1699">NPR.1699</string>
+    <string name="npr_1299">NPR.1299</string>
+    <string name="birthday_flower_bouquet">Birthday Flower Bouquet</string>
+    <string name="npr_1799">NPR.1799</string>
+    <string name="birthday_candles_pack">Birthday Candles Pack</string>
+    <string name="npr_299">NPR.299</string>
+    <string name="premium_chocolates_box">Premium Chocolates Box</string>
+    <string name="npr_999">NPR.999</string>
+    <string name="favourite">Favourite</string>
 
 </resources>
