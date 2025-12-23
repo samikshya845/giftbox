@@ -9,7 +9,7 @@
     android:background="#FFFFFF"
     tools:context=".FaqActivity">
 
-    <!-- Top bar -->
+
     <LinearLayout
         android:id="@+id/headerFaqs"
         android:layout_width="418dp"
@@ -25,8 +25,8 @@
 
         <ImageView
             android:id="@+id/ivBackFaqs"
-            android:layout_width="40dp"
-            android:layout_height="45dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:contentDescription="Back"
             android:src="@drawable/back_arrow"
             app:tint="@android:color/white" />
@@ -37,7 +37,7 @@
             android:layout_marginStart="16dp"
             android:text="@string/faqs"
             android:textColor="@android:color/white"
-            android:textSize="24sp"
+            android:textSize="26sp"
             android:textStyle="bold" />
     </LinearLayout>
 

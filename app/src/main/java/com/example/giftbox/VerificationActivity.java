@@ -27,7 +27,7 @@ public class VerificationActivity extends AppCompatActivity {
         ImageView backArrow = findViewById(R.id.backArrow);
 
         backArrow.setOnClickListener(v -> {
-            finish(); // This closes current activity and returns to previous one
+            finish();
         });
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -37,24 +37,25 @@ public class VerificationActivity extends AppCompatActivity {
         });
 
 
-        // Find the Verify button from your OTP layout
+
         MaterialButton verifyButton = findViewById(R.id.verifyButton);
 
-        // Set click listener to launch Reset Password screen
+
         verifyButton.setOnClickListener(v -> {
             String enteredOtp = getEnteredOtp();
 
             if (isOtpValid(enteredOtp)) {
-                // Launch Reset Password Activity
+
                 Intent intent = new Intent(VerificationActivity.this, ResetPasswordActivity.class);
-                // Pass email from previous screen if needed
+
+
                 String email = getIntent().getStringExtra("email");
                 if (email != null) {
                     intent.putExtra("email", email);
                 }
                 startActivity(intent);
             } else {
-                // Show error for invalid OTP
+
                 Toast.makeText(VerificationActivity.this,
                         "Invalid OTP. Please try again.", Toast.LENGTH_SHORT).show();
             }

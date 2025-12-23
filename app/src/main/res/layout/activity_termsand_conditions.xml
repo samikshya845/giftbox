@@ -8,7 +8,7 @@
     android:background="#FFFFFF"
     tools:context=".TermsandConditionsActivity">
 
-    <!-- Top bar -->
+
     <LinearLayout
         android:id="@+id/headerTerms"
         android:layout_width="match_parent"
@@ -24,11 +24,12 @@
 
         <ImageView
             android:id="@+id/ivBackTerms"
-            android:layout_width="45dp"
-            android:layout_height="39dp"
+            android:layout_width="46dp"
+            android:layout_height="58dp"
             android:contentDescription="Back"
             android:src="@drawable/back_arrow"
             app:tint="@android:color/white"
+            android:layout_marginTop="10dp"
             tools:ignore="HardcodedText" />
 
         <TextView
@@ -38,8 +39,10 @@
             android:layout_marginTop="15dp"
             android:text="@string/terms_and_conditions"
             android:textColor="@android:color/white"
-            android:textSize="24sp"
+            android:textSize="28sp"
             android:textStyle="bold" />
+
+
     </LinearLayout>
 
 
@@ -161,7 +164,7 @@
 
 
 
-            <!-- Section: Changes -->
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

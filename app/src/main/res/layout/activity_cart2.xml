@@ -386,54 +386,55 @@
                     android:orientation="vertical"
                     android:padding="16dp">
 
-                    <CheckBox
-                        android:id="@+id/personalizedNoteCheckbox"
+                    <!-- Personalised note options -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="Add note"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <RadioGroup
+                        android:id="@+id/rgNote"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/add_personalized_note"
-                        android:textColor="#333333"
-                        android:textSize="14sp" />
+                        android:orientation="vertical">
 
-                    <!-- Write your note section - MODIFIED -->
-                    <TextView
-                        android:id="@+id/noteLabel"
+                        <RadioButton
+                            android:id="@+id/rbNoNote"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="No note (Rs. 0)" />
+
+                        <RadioButton
+                            android:id="@+id/rbPersonalisedNote"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Personalised note (Rs. 100)" />
+                    </RadioGroup>
+
+                    <!-- Input field for personalised note (hidden by default) -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilPersonalisedNote"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="@string/write_your_note_here"
-                        android:textColor="#333333"
-                        android:textSize="14sp"
-                        android:textStyle="bold"
-                        android:visibility="gone" />
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/noteInputLayout"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:layout_marginBottom="8dp"
-                        android:visibility="gone"
-                        app:boxBackgroundColor="#F5F5F5"
-                        app:boxCornerRadiusBottomEnd="8dp"
-                        app:boxCornerRadiusBottomStart="8dp"
-                        app:boxCornerRadiusTopEnd="8dp"
-                        app:boxCornerRadiusTopStart="8dp"
-                        app:boxStrokeColor="#D4A5FF"
-                        app:hintTextColor="#999999">
+                        android:hint="Type your personalised message..."
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:visibility="gone">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/noteEditText"
+                            android:id="@+id/etPersonalisedNote"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/type_your_personalized_message"
                             android:inputType="textMultiLine"
-                            android:maxLines="3"
-                            android:minLines="2"
-                            android:padding="12dp"
-                            android:textColor="#333333"
-                            android:textSize="14sp" />
+                            android:minLines="3"
+                            android:maxLines="4" />
                     </com.google.android.material.textfield.TextInputLayout>
 
+                    <!-- Gift wrapping toggle -->
                     <CheckBox
                         android:id="@+id/giftWrappingCheckbox"
                         android:layout_width="match_parent"
@@ -442,6 +443,36 @@
                         android:text="@string/gift_wrapping"
                         android:textColor="#333333"
                         android:textSize="14sp" />
+
+                    <!-- Gift wrapping options (hidden by default) -->
+                    <LinearLayout
+                        android:id="@+id/layoutGiftWrapOptions"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="8dp"
+                        android:visibility="gone">
+
+                        <RadioGroup
+                            android:id="@+id/rgGiftWrap"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <RadioButton
+                                android:id="@+id/rbSingleWrap"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Single wrap (Rs. 50)" />
+
+                            <RadioButton
+                                android:id="@+id/rbDoubleWrap"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Double wrap (Rs. 100)" />
+                        </RadioGroup>
+                    </LinearLayout>
+
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 

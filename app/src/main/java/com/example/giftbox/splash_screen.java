@@ -29,6 +29,7 @@ public class splash_screen extends AppCompatActivity {
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             finish();
         });
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, 0, systemBars.right, systemBars.bottom);
@@ -36,3 +37,7 @@ public class splash_screen extends AppCompatActivity {
         });
     }
 }
+
+
+
+

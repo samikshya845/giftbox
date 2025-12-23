@@ -3,14 +3,13 @@ package com.example.giftbox;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
 public class homepage extends AppCompatActivity {
 
     @SuppressLint("SetTextI18n")
@@ -20,11 +19,7 @@ public class homepage extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
-
         setContentView(R.layout.activity_homepage);
-
-
-
         TextView tvGreeting = findViewById(R.id.user_name);
         String username = getIntent().getStringExtra("username");
 
@@ -34,7 +29,6 @@ public class homepage extends AppCompatActivity {
             tvGreeting.setText("Hi there!");
         }
 
-
         ImageView imageViewProfile = findViewById(R.id.imageView);
         imageViewProfile.setOnClickListener(v -> {
             Intent intent = new Intent(homepage.this, ProfileActivity.class);
@@ -42,22 +36,27 @@ public class homepage extends AppCompatActivity {
             startActivity(intent);
             overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
         });
-        View ivNotification = findViewById(R.id.ivNotification);
 
-        ivNotification.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(homepage.this, MoreActivity.class);
-                startActivity(intent);
-            }
+        ImageView ivNotification = findViewById(R.id.ivNotification);
+        ivNotification.setOnClickListener(v -> {
+            Intent intent = new Intent(homepage.this, NotificationActivity.class);
+            intent.putExtra("username", username); // optional
+            startActivity(intent);
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         });
 
-
+        ImageView ivMore = findViewById(R.id.ivMore);
+        ivMore.setOnClickListener(v -> {
+            Intent intent = new Intent(homepage.this, MoreActivity.class);
+            intent.putExtra("username", username); // optional, if you need it
+            startActivity(intent);
+            overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+        });
 
         LinearLayout categoryBirthday    = findViewById(R.id.category_birthday);
         LinearLayout categoryAnniversary = findViewById(R.id.category_anniversary);
         LinearLayout categoryCorporate   = findViewById(R.id.category_corporate);
-        LinearLayout categorySeasonal    = findViewById(R.id.category_seasonal);  // ids from XML[file:76]
+        LinearLayout categorySeasonal    = findViewById(R.id.category_seasonal);
 
         categoryBirthday.setOnClickListener(v -> {
             Intent i = new Intent(homepage.this, BirthdayCategoryActivity.class);
@@ -82,6 +81,7 @@ public class homepage extends AppCompatActivity {
             i.putExtra("username", username);
             startActivity(i);
         });
+
         BottomNavigationView bottomNavigation = findViewById(R.id.bottomNavigation);
         bottomNavigation.setSelectedItemId(R.id.nav_home);
 
@@ -102,7 +102,7 @@ public class homepage extends AppCompatActivity {
 
             if (itemId == R.id.nav_chat) {
                 Intent intent = new Intent(homepage.this, ChatActivity.class);
-                intent.putExtra("username", username);   // optional
+                intent.putExtra("username", username);
                 startActivity(intent);
                 overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
                 return true;

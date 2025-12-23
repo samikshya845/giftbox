@@ -26,6 +26,7 @@ public class login extends AppCompatActivity {
         }
         setContentView(R.layout.activity_login);
 
+
         tilEmail = findViewById(R.id.tilEmail);
         tilPassword = findViewById(R.id.tilPassword);
         etEmail = findViewById(R.id.etEmail);

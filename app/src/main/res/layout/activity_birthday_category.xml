@@ -28,14 +28,14 @@
             android:contentDescription="@string/back"
             android:padding="8dp"
             android:src="@drawable/back_arrow"
-            android:background="@drawable/circle_white"/>
+            app:tint="@android:color/white"/>
 
         <LinearLayout
             android:id="@+id/title_container"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="15dp"
             android:layout_toEndOf="@id/ivBack"
             android:orientation="vertical">
 
@@ -52,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/birthday_gifts"
                 android:textColor="@android:color/white"
-                android:textSize="24sp"
+                android:textSize="26sp"
                 android:textStyle="bold" />
         </LinearLayout>
 

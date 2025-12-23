@@ -1,13 +1,11 @@
 package com.example.giftbox;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class TermsandConditionsActivity extends AppCompatActivity {
 
@@ -16,11 +14,17 @@ public class TermsandConditionsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_termsand_conditions);
+
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
-        ImageView ivBackTerms = findViewById(R.id.ivBackTerms);
-        ivBackTerms.setOnClickListener(v -> onBackPressed());
 
+        ImageView ivBackTerms = findViewById(R.id.ivBackTerms);
+        ivBackTerms.setOnClickListener(v -> {
+            Intent intent = new Intent(TermsandConditionsActivity.this, MoreActivity.class);
+            startActivity(intent);
+            finish(); // optional: close feedback so it’s not in back stack
+        });
     }
 }
+

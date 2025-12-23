@@ -31,8 +31,8 @@
             <ImageView
                 android:id="@+id/ivBack"
                 android:layout_width="52dp"
-                android:layout_height="39dp"
-                android:background="@drawable/circle_white"
+                android:layout_height="52dp"
+                app:tint="@android:color/white"
                 android:padding="6dp"
                 android:src="@drawable/back_arrow" />
 
@@ -51,7 +51,6 @@
                 android:layout_width="40dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="15dp"
-                android:background="@drawable/circle_white"
                 android:padding="6dp"
                 android:src="@drawable/ic_editprofile" />
         </LinearLayout>

@@ -25,7 +25,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
             getSupportActionBar().hide();
         }
 
-        // View bindings
+
         newPasswordLayout = findViewById(R.id.newPasswordLayout);
         confirmPasswordLayout = findViewById(R.id.confirmPasswordLayout);
         newPasswordEditText = findViewById(R.id.newPassword);
@@ -33,10 +33,12 @@ public class ResetPasswordActivity extends AppCompatActivity {
         resetButton = findViewById(R.id.resetButton);
         backArrow = findViewById(R.id.backArrow);
 
-        // Back arrow: go to previous page
+
         backArrow.setOnClickListener(v -> onBackPressed());
 
-        // Reset button click
+
+
+
         resetButton.setOnClickListener(v -> {
             if (validateInputs()) {
                 // TODO: actually call your API / Firebase / DB here to update password
@@ -53,11 +55,11 @@ public class ResetPasswordActivity extends AppCompatActivity {
         String confirmPass = confirmPasswordEditText.getText() != null
                 ? confirmPasswordEditText.getText().toString().trim() : "";
 
-        // clear old errors
+
         newPasswordLayout.setError(null);
         confirmPasswordLayout.setError(null);
 
-        // empty checks
+
         if (TextUtils.isEmpty(newPass)) {
             newPasswordLayout.setError("Please enter new password");
             newPasswordLayout.requestFocus();

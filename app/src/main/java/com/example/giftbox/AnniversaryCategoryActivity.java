@@ -19,9 +19,8 @@ public class AnniversaryCategoryActivity extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
-        setContentView(R.layout.activity_anniversary_category);
 
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"})
+        setContentView(R.layout.activity_anniversary_category);
         ImageView ivBack = findViewById(R.id.ivBack);
         ivBack.setOnClickListener(v -> finish());
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
