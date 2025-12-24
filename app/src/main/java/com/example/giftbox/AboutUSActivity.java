@@ -17,7 +17,7 @@ public class AboutUSActivity extends AppCompatActivity {
             getSupportActionBar().hide();
         }
         setContentView(R.layout.activity_about_usactivity);
-
+// back image
         ImageView ivBackAbout = findViewById(R.id.ivBackAbout);
         ivBackAbout.setOnClickListener(v -> onBackPressed());
 
