@@ -20,13 +20,14 @@ public class EditprofileActivity extends AppCompatActivity {
             getSupportActionBar().hide();
         }
 
+
         setContentView(R.layout.activity_editprofile);
         ImageView ivBack = findViewById(R.id.ivBack);
 
         ivBack.setOnClickListener(v -> {
             Intent intent = new Intent(EditprofileActivity.this, ProfileActivity.class);
             startActivity(intent);
-            finish();   // optional, so Back does not return to Edit screen
+            finish();
         });
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());

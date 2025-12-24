@@ -22,10 +22,10 @@ public class NotificationActivity extends AppCompatActivity {
         ImageView ivBack = findViewById(R.id.ivBackNotifications);
 
         ivBack.setOnClickListener(v -> {
-            onBackPressed();   // or: finish();
+            onBackPressed();
         });
 
-        findViewById(R.id.main);// this matches the id above
+        findViewById(R.id.main);
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());

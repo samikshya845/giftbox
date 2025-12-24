@@ -23,6 +23,7 @@ public class VerificationActivity extends AppCompatActivity {
             getSupportActionBar().hide();
         }
 
+
         setContentView(R.layout.activity_verification);
         ImageView backArrow = findViewById(R.id.backArrow);
 

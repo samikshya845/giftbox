@@ -6,7 +6,6 @@ import android.widget.ImageView;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
-
 public class AboutUSActivity extends AppCompatActivity {
 
     @Override

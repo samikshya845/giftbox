@@ -26,6 +26,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
         }
 
 
+
         newPasswordLayout = findViewById(R.id.newPasswordLayout);
         confirmPasswordLayout = findViewById(R.id.confirmPasswordLayout);
         newPasswordEditText = findViewById(R.id.newPassword);

@@ -23,7 +23,7 @@ public class TermsandConditionsActivity extends AppCompatActivity {
         ivBackTerms.setOnClickListener(v -> {
             Intent intent = new Intent(TermsandConditionsActivity.this, MoreActivity.class);
             startActivity(intent);
-            finish(); // optional: close feedback so it’s not in back stack
+            finish();
         });
     }
 }

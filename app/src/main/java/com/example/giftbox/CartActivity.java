@@ -37,19 +37,18 @@ public class CartActivity extends AppCompatActivity {
         }
         setContentView(R.layout.activity_cart2);
 
-
         rgNote = findViewById(R.id.rgNote);
         noteInputLayout = findViewById(R.id.tilPersonalisedNote);
         etPersonalisedNote = findViewById(R.id.etPersonalisedNote);
-
-
         giftWrappingCheckbox = findViewById(R.id.giftWrappingCheckbox);
         layoutGiftWrapOptions = findViewById(R.id.layoutGiftWrapOptions);
         rgGiftWrap = findViewById(R.id.rgGiftWrap);
 
-
-        MaterialButton checkoutButton = findViewById(R.id.checkoutButton);
+        MaterialButton checkoutButton = findViewById(R.id.btnProceed);
         ImageView backButton = findViewById(R.id.backButton);
+
+
+
 
 
         rgNote.setOnCheckedChangeListener((group, checkedId) -> {

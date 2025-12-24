@@ -27,7 +27,7 @@ public class FeedbackActivity extends AppCompatActivity {
         ivBackFeedback.setOnClickListener(v -> {
             Intent intent = new Intent(FeedbackActivity.this, MoreActivity.class);
             startActivity(intent);
-            // optional: close feedback so it’s not in back stack
+
             finish();
         });
 
