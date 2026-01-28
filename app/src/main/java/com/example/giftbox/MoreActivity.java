@@ -7,6 +7,9 @@ import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.giftbox.view.AboutUSActivity;
+import com.example.giftbox.view.FaqActivity;
+
 public class MoreActivity extends AppCompatActivity {
 
     ImageView ivBack;

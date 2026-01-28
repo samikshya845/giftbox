@@ -5,283 +5,271 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F8E4FF"
-    tools:context=".homepage">
+    tools:context=".view.HomeActivity">
 
-
+    <!-- Fixed Header Section -->
     <LinearLayout
-        android:id="@+id/main_content"
+        android:id="@+id/header_section"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:background="@drawable/gradient_purple_pink"
+        android:orientation="vertical"
+        android:padding="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="368dp"
+            android:layout_height="62dp"
+            android:layout_marginTop="15dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="43dp"
+                android:layout_height="43dp"
+                android:layout_marginEnd="8dp"
+                android:contentDescription="Profile"
+                android:src="@drawable/profile_icon"
+                app:tint="@color/faqAnswerBg" />
+
+            <TextView
+                android:id="@+id/app_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="GiftBox"
+                android:textColor="@android:color/white"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/ivNotification"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                android:contentDescription="Notifications"
+                android:src="@drawable/ic_notification"
+                app:tint="@color/background" />
+
+            <ImageView
+                android:id="@+id/ivMore"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:contentDescription="More options"
+                android:src="@drawable/ic_threedot"
+                app:tint="@color/background" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="8dp"
+            android:gravity="start"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hi, User"
+                android:textColor="@android:color/white"
+                android:textSize="24sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Scrollable Content Section -->
+    <ScrollView
+        android:id="@+id/main_scroll_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="parent"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/header_section"
         app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-
         <LinearLayout
-            android:id="@+id/header_section"
+            android:id="@+id/main_content"
             android:layout_width="match_parent"
-            android:layout_height="160dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            android:background="@drawable/gradient_purple_pink"
-            android:orientation="vertical"
-            android:padding="20dp">
+            <EditText
+                android:id="@+id/search_bar"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/search_background"
+                android:drawableStart="@drawable/ic_search_24"
+                android:drawablePadding="12dp"
+                android:hint="Search for gifts..."
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp" />
 
+            <TextView
+                android:id="@+id/categories_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Categories"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="16dp" />
 
             <LinearLayout
-                android:layout_width="368dp"
-                android:layout_height="62dp"
-                android:layout_marginTop="15dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:id="@+id/categories_section"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
 
-
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="43dp"
-                    android:layout_height="43dp"
-                    android:layout_marginEnd="8dp"
-                    android:contentDescription="Profile"
-                    android:src="@drawable/profile_icon"
-                    app:tint="@color/faqAnswerBg" />
-
-
-                <TextView
-                    android:id="@+id/app_name"
+                <!-- Category layouts remain the same -->
+                <LinearLayout
+                    android:id="@+id/category_birthday"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:orientation="vertical"
                     android:gravity="center"
-                    android:text="GiftBox"
-                    android:textColor="@android:color/white"
-                    android:textSize="28sp"
-                    android:textStyle="bold" />
+                    android:padding="8dp"
+                    android:layout_marginEnd="4dp"
+                    android:clickable="true"
+                    android:focusable="true" >
 
+                    <ImageView
+                        android:id="@+id/birthday_icon"
+                        android:layout_width="59dp"
+                        android:layout_height="41dp"
+                        android:layout_marginBottom="4dp"
+                        android:contentDescription="Birthday"
+                        android:src="@drawable/birthday_icon" />
 
-                <ImageView
-                    android:id="@+id/ivNotification"
-                    android:layout_width="30dp"
+                    <TextView
+                        android:layout_width="59dp"
+                        android:layout_height="wrap_content"
+                        android:text="Birthday"
+                        android:textColor="#6A4C93"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/category_anniversary"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="12dp"
-                    android:contentDescription="Notifications"
-                    android:src="@drawable/ic_notification"
-                    app:tint="@color/background" />
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:clickable="true"
+                    android:focusable="true">
 
+                    <ImageView
+                        android:id="@+id/anniversary_icon"
+                        android:layout_width="56dp"
+                        android:layout_height="43dp"
+                        android:layout_marginBottom="4dp"
+                        android:contentDescription="Anniversary"
+                        android:src="@drawable/fav_icon" />
 
-                <ImageView
-                    android:id="@+id/ivMore"
-                    android:layout_width="30dp"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Anniversary"
+                        android:textColor="#6A4C93"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/category_corporate"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:contentDescription="More options"
-                    android:src="@drawable/ic_threedot"
-                    app:tint="@color/background" />
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/corporate_icon"
+                        android:layout_width="64dp"
+                        android:layout_height="43dp"
+                        android:layout_marginBottom="4dp"
+                        android:contentDescription="Corporate"
+                        android:src="@drawable/handshake" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Corporate"
+                        android:textColor="#6A4C93"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/category_seasonal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:layout_marginStart="4dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/seasonal_icon"
+                        android:layout_width="58dp"
+                        android:layout_height="43dp"
+                        android:layout_marginBottom="4dp"
+                        android:contentDescription="Seasonal"
+                        android:src="@drawable/seasonal" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Seasonal"
+                        android:textColor="#6A4C93"
+                        android:textSize="12sp" />
+                </LinearLayout>
             </LinearLayout>
 
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_marginTop="8dp"
-                android:gravity="start"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/user_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Hi, User"
-                    android:textColor="@android:color/white"
-                    android:textSize="24sp" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-
-        <EditText
-            android:id="@+id/search_bar"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/search_background"
-            android:drawableStart="@drawable/ic_search_24"
-            android:drawablePadding="12dp"
-            android:hint="Search for gifts..."
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp" />
-
-
-        <TextView
-            android:id="@+id/categories_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Categories"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="#333333"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="16dp" />
-
-
-        <LinearLayout
-            android:id="@+id/categories_section"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="16dp"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp">
-
-
-            <LinearLayout
-                android:id="@+id/category_birthday"
-                android:layout_width="0dp"
+            <!-- Featured Gifts Title -->
+            <TextView
+                android:id="@+id/featured_title"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:padding="8dp"
-                android:layout_marginEnd="4dp"
-                android:clickable="true"
-                android:focusable="true" >
+                android:text="Featured Gifts"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="16dp" />
 
-                <ImageView
-                    android:id="@+id/birthday_icon"
-                    android:layout_width="59dp"
-                    android:layout_height="41dp"
-                    android:layout_marginBottom="4dp"
-                    android:contentDescription="Birthday"
-                    android:src="@drawable/birthday_icon" />
-
-                <TextView
-                    android:layout_width="59dp"
-                    android:layout_height="wrap_content"
-                    android:text="Birthday"
-                    android:textColor="#6A4C93"
-                    android:textSize="12sp" />
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:id="@+id/category_anniversary"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:padding="8dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginEnd="4dp"
-                android:clickable="true"
-                android:focusable="true">
-
-                <ImageView
-                    android:id="@+id/anniversary_icon"
-                    android:layout_width="56dp"
-                    android:layout_height="43dp"
-                    android:layout_marginBottom="4dp"
-                    android:contentDescription="Anniversary"
-                    android:src="@drawable/fav_icon" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Anniversary"
-                    android:textColor="#6A4C93"
-                    android:textSize="12sp" />
-            </LinearLayout>
-
-            <!-- Corporate Category with Icon -->
-            <LinearLayout
-                android:id="@+id/category_corporate"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:padding="8dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginEnd="4dp"
-                android:clickable="true"
-                android:focusable="true">
-
-                <ImageView
-                    android:id="@+id/corporate_icon"
-                    android:layout_width="64dp"
-                    android:layout_height="43dp"
-                    android:layout_marginBottom="4dp"
-                    android:contentDescription="Corporate"
-                    android:src="@drawable/handshake" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Corporate"
-                    android:textColor="#6A4C93"
-                    android:textSize="12sp" />
-            </LinearLayout>
-
-            <!-- Seasonal Category with Icon -->
-            <LinearLayout
-                android:id="@+id/category_seasonal"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:padding="8dp"
-                android:layout_marginStart="4dp"
-                android:clickable="true"
-                android:focusable="true">
-
-                <ImageView
-                    android:id="@+id/seasonal_icon"
-                    android:layout_width="58dp"
-                    android:layout_height="43dp"
-                    android:layout_marginBottom="4dp"
-                    android:contentDescription="Seasonal"
-                    android:src="@drawable/seasonal" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Seasonal"
-                    android:textColor="#6A4C93"
-                    android:textSize="12sp" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <!-- Featured Gifts Title -->
-        <TextView
-            android:id="@+id/featured_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Featured Gifts"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="#333333"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="16dp" />
-
-        <!-- Vertical Scrollable Gifts Section -->
-        <!-- Vertical Scrollable Gifts Section -->
-        <ScrollView
-            android:id="@+id/vertical_scroll_view"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:layout_marginTop="12dp"
-            android:scrollbars="none">
-
+            <!-- Vertical Scrollable Gifts Section -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:paddingStart="8dp"
-                android:paddingEnd="8dp">
+                android:paddingEnd="8dp"
+                android:layout_marginTop="12dp">
 
                 <!-- Two Cards Per Row -->
                 <LinearLayout
@@ -304,7 +292,6 @@
                             android:orientation="vertical"
                             android:padding="8dp">
 
-
                             <FrameLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="120dp">
@@ -318,10 +305,12 @@
 
                                 <ImageView
                                     android:id="@+id/ivFavFlower"
-                                    android:layout_width="24dp"
-                                    android:layout_height="24dp"
+                                    android:layout_width="22dp"
+                                    android:layout_height="22dp"
                                     android:layout_gravity="top|end"
-                                    android:layout_margin="8dp"
+                                    android:layout_margin="6dp"
+                                    android:background="@drawable/circle_white"
+                                    android:padding="3dp"
                                     android:src="@drawable/ic_favourites_border"
                                     android:contentDescription="@string/favourite" />
                             </FrameLayout>
@@ -353,7 +342,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="8dp"
-                                android:background="@drawable/gradient_purple_pink"
+                                android:background="@drawable/rounded_button_ripple_effect"
                                 android:text="Add to Cart"
                                 android:textColor="@android:color/white"
                                 android:textSize="12sp" />
@@ -375,7 +364,6 @@
                             android:orientation="vertical"
                             android:padding="8dp">
 
-                            <!-- IMAGE + FAV -->
                             <FrameLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="120dp">
@@ -389,10 +377,12 @@
 
                                 <ImageView
                                     android:id="@+id/ivFavChocolate"
-                                    android:layout_width="24dp"
-                                    android:layout_height="24dp"
+                                    android:layout_width="22dp"
+                                    android:layout_height="22dp"
                                     android:layout_gravity="top|end"
-                                    android:layout_margin="8dp"
+                                    android:layout_margin="6dp"
+                                    android:background="@drawable/circle_white"
+                                    android:padding="3dp"
                                     android:src="@drawable/ic_favourites_border"
                                     android:contentDescription="@string/favourite" />
                             </FrameLayout>
@@ -424,7 +414,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="8dp"
-                                android:background="#6A4C93"
+                                android:background="@drawable/rounded_button_ripple_effect"
                                 android:text="Add to Cart"
                                 android:textColor="@android:color/white"
                                 android:textSize="12sp" />
@@ -453,7 +443,6 @@
                             android:orientation="vertical"
                             android:padding="8dp">
 
-                            <!-- IMAGE + FAV -->
                             <FrameLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="120dp">
@@ -467,10 +456,12 @@
 
                                 <ImageView
                                     android:id="@+id/ivFavTeddy"
-                                    android:layout_width="24dp"
-                                    android:layout_height="24dp"
+                                    android:layout_width="22dp"
+                                    android:layout_height="22dp"
                                     android:layout_gravity="top|end"
-                                    android:layout_margin="8dp"
+                                    android:layout_margin="6dp"
+                                    android:background="@drawable/circle_white"
+                                    android:padding="3dp"
                                     android:src="@drawable/ic_favourites_border"
                                     android:contentDescription="@string/favourite" />
                             </FrameLayout>
@@ -502,7 +493,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="8dp"
-                                android:background="#6A4C93"
+                                android:background="@drawable/rounded_button_ripple_effect"
                                 android:text="Add to Cart"
                                 android:textColor="@android:color/white"
                                 android:textSize="12sp" />
@@ -524,7 +515,6 @@
                             android:orientation="vertical"
                             android:padding="8dp">
 
-                            <!-- IMAGE + FAV -->
                             <FrameLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="120dp">
@@ -538,10 +528,12 @@
 
                                 <ImageView
                                     android:id="@+id/ivFavWatch"
-                                    android:layout_width="24dp"
-                                    android:layout_height="24dp"
+                                    android:layout_width="22dp"
+                                    android:layout_height="22dp"
                                     android:layout_gravity="top|end"
-                                    android:layout_margin="8dp"
+                                    android:layout_margin="6dp"
+                                    android:background="@drawable/circle_white"
+                                    android:padding="3dp"
                                     android:src="@drawable/ic_favourites_border"
                                     android:contentDescription="@string/favourite" />
                             </FrameLayout>
@@ -573,7 +565,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="8dp"
-                                android:background="#6A4C93"
+                                android:background="@drawable/rounded_button_ripple_effect"
                                 android:text="Add to Cart"
                                 android:textColor="@android:color/white"
                                 android:textSize="12sp" />
@@ -602,7 +594,6 @@
                             android:orientation="vertical"
                             android:padding="8dp">
 
-                            <!-- IMAGE + FAV -->
                             <FrameLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="120dp">
@@ -616,10 +607,12 @@
 
                                 <ImageView
                                     android:id="@+id/ivFavPerfume"
-                                    android:layout_width="24dp"
-                                    android:layout_height="24dp"
+                                    android:layout_width="22dp"
+                                    android:layout_height="22dp"
                                     android:layout_gravity="top|end"
-                                    android:layout_margin="8dp"
+                                    android:layout_margin="6dp"
+                                    android:background="@drawable/circle_white"
+                                    android:padding="3dp"
                                     android:src="@drawable/ic_favourites_border"
                                     android:contentDescription="@string/favourite" />
                             </FrameLayout>
@@ -651,7 +644,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="8dp"
-                                android:background="#6A4C93"
+                                android:background="@drawable/rounded_button_ripple_effect"
                                 android:text="Add to Cart"
                                 android:textColor="@android:color/white"
                                 android:textSize="12sp" />
@@ -673,7 +666,6 @@
                             android:orientation="vertical"
                             android:padding="8dp">
 
-                            <!-- IMAGE + FAV -->
                             <FrameLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="120dp">
@@ -687,10 +679,12 @@
 
                                 <ImageView
                                     android:id="@+id/ivFavJewelry"
-                                    android:layout_width="24dp"
-                                    android:layout_height="24dp"
+                                    android:layout_width="22dp"
+                                    android:layout_height="22dp"
                                     android:layout_gravity="top|end"
-                                    android:layout_margin="8dp"
+                                    android:layout_margin="6dp"
+                                    android:background="@drawable/circle_white"
+                                    android:padding="3dp"
                                     android:src="@drawable/ic_favourites_border"
                                     android:contentDescription="@string/favourite" />
                             </FrameLayout>
@@ -722,7 +716,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="8dp"
-                                android:background="#6A4C93"
+                                android:background="@drawable/rounded_button_ripple_effect"
                                 android:text="Add to Cart"
                                 android:textColor="@android:color/white"
                                 android:textSize="12sp" />
@@ -751,7 +745,6 @@
                             android:orientation="vertical"
                             android:padding="8dp">
 
-                            <!-- IMAGE + FAV -->
                             <FrameLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="120dp">
@@ -765,10 +758,12 @@
 
                                 <ImageView
                                     android:id="@+id/ivFavCake"
-                                    android:layout_width="24dp"
-                                    android:layout_height="24dp"
+                                    android:layout_width="22dp"
+                                    android:layout_height="22dp"
                                     android:layout_gravity="top|end"
-                                    android:layout_margin="8dp"
+                                    android:layout_margin="6dp"
+                                    android:background="@drawable/circle_white"
+                                    android:padding="3dp"
                                     android:src="@drawable/ic_favourites_border"
                                     android:contentDescription="@string/favourite" />
                             </FrameLayout>
@@ -800,7 +795,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="8dp"
-                                android:background="#6A4C93"
+                                android:background="@drawable/rounded_button_ripple_effect"
                                 android:text="Add to Cart"
                                 android:textColor="@android:color/white"
                                 android:textSize="12sp" />
@@ -822,7 +817,6 @@
                             android:orientation="vertical"
                             android:padding="8dp">
 
-                            <!-- IMAGE + FAV -->
                             <FrameLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="120dp">
@@ -836,10 +830,12 @@
 
                                 <ImageView
                                     android:id="@+id/ivFavFrame"
-                                    android:layout_width="24dp"
-                                    android:layout_height="24dp"
+                                    android:layout_width="22dp"
+                                    android:layout_height="22dp"
                                     android:layout_gravity="top|end"
-                                    android:layout_margin="8dp"
+                                    android:layout_margin="6dp"
+                                    android:background="@drawable/circle_white"
+                                    android:padding="3dp"
                                     android:src="@drawable/ic_favourites_border"
                                     android:contentDescription="@string/favourite" />
                             </FrameLayout>
@@ -871,7 +867,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="8dp"
-                                android:background="#6A4C93"
+                                android:background="@drawable/rounded_button_ripple_effect"
                                 android:text="Add to Cart"
                                 android:textColor="@android:color/white"
                                 android:textSize="12sp" />
@@ -900,7 +896,6 @@
                             android:orientation="vertical"
                             android:padding="8dp">
 
-                            <!-- IMAGE + FAV -->
                             <FrameLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="120dp">
@@ -914,10 +909,12 @@
 
                                 <ImageView
                                     android:id="@+id/ivFavGiftbox"
-                                    android:layout_width="24dp"
-                                    android:layout_height="24dp"
+                                    android:layout_width="22dp"
+                                    android:layout_height="22dp"
                                     android:layout_gravity="top|end"
-                                    android:layout_margin="8dp"
+                                    android:layout_margin="6dp"
+                                    android:background="@drawable/circle_white"
+                                    android:padding="3dp"
                                     android:src="@drawable/ic_favourites_border"
                                     android:contentDescription="@string/favourite" />
                             </FrameLayout>
@@ -949,7 +946,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="8dp"
-                                android:background="#6A4C93"
+                                android:background="@drawable/rounded_button_ripple_effect"
                                 android:text="Add to Cart"
                                 android:textColor="@android:color/white"
                                 android:textSize="12sp" />
@@ -971,7 +968,6 @@
                             android:orientation="vertical"
                             android:padding="8dp">
 
-                            <!-- IMAGE + FAV -->
                             <FrameLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="120dp">
@@ -985,10 +981,12 @@
 
                                 <ImageView
                                     android:id="@+id/ivFavCard"
-                                    android:layout_width="24dp"
-                                    android:layout_height="24dp"
+                                    android:layout_width="22dp"
+                                    android:layout_height="22dp"
                                     android:layout_gravity="top|end"
-                                    android:layout_margin="8dp"
+                                    android:layout_margin="6dp"
+                                    android:background="@drawable/circle_white"
+                                    android:padding="3dp"
                                     android:src="@drawable/ic_favourites_border"
                                     android:contentDescription="@string/favourite" />
                             </FrameLayout>
@@ -1020,18 +1018,16 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="8dp"
-                                android:background="#6A4C93"
+                                android:background="@drawable/rounded_button_ripple_effect"
                                 android:text="Add to Cart"
                                 android:textColor="@android:color/white"
                                 android:textSize="12sp" />
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
                 </LinearLayout>
-
             </LinearLayout>
-        </ScrollView>
-
-    </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation"

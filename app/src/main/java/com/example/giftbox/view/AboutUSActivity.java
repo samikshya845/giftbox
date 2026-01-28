@@ -1,10 +1,12 @@
-package com.example.giftbox;
+package com.example.giftbox.view;
 
 import android.os.Bundle;
 import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.giftbox.R;
 
 public class AboutUSActivity extends AppCompatActivity {
 

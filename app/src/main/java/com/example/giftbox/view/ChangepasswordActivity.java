@@ -1,4 +1,4 @@
-package com.example.giftbox;
+package com.example.giftbox.view;
 
 
 import android.os.Bundle;
@@ -7,6 +7,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.giftbox.R;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -26,6 +27,7 @@ public class ChangepasswordActivity extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
+
 
         tilOldPassword = findViewById(R.id.tilOldPassword);
         tilNewPassword = findViewById(R.id.tilNewPassword);

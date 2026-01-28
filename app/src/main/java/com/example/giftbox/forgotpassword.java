@@ -8,6 +8,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.giftbox.view.LoginActivity;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -33,7 +34,7 @@ public class forgotpassword extends AppCompatActivity {
 
 
         findViewById(R.id.tvBackToLogin).setOnClickListener(v -> {
-            startActivity(new Intent(forgotpassword.this, login.class));
+            startActivity(new Intent(forgotpassword.this, LoginActivity.class));
             finish();
             overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
 

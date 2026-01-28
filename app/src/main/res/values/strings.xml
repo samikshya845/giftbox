@@ -172,5 +172,7 @@
     <string name="npr_999">NPR.999</string>
     <string name="favourite">Favourite</string>
     <string name="search_anniversary_gifts">Search anniversay gifts\n</string>
+    <string name="seasonal_gifts">Seasonal Gifts</string>
+    <string name="search_seasonal_gifts">Search seasonal gifts</string>
 
 </resources>

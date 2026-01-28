@@ -1,5 +1,6 @@
-package com.example.giftbox;
+package com.example.giftbox.view;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -9,10 +10,13 @@ import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.giftbox.EditprofileActivity;
+import com.example.giftbox.R;
+
 public class ProfileActivity extends AppCompatActivity {
-    private LinearLayout rowLogout;
     LinearLayout rowChangePassword;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,11 +25,17 @@ public class ProfileActivity extends AppCompatActivity {
         }
         setContentView(R.layout.activity_profile);
 
+        LinearLayout rowDeliveryAddress = findViewById(R.id.rowDeliveryAddress);
+        rowDeliveryAddress.setOnClickListener(v -> {
+            Intent intent = new Intent(ProfileActivity.this, DeliveryAddressActivity.class);
+            startActivity(intent);
+        });
+
         // Views
         ImageView ivBack = findViewById(R.id.ivBack);
         ImageView ivEdit = findViewById(R.id.ivEdit);
         TextView tvName = findViewById(R.id.tvName);
-        rowLogout = findViewById(R.id.rowLogout);
+        LinearLayout rowLogout = findViewById(R.id.rowLogout);
 
         rowChangePassword = findViewById(R.id.rowChangePassword);
         rowChangePassword.setOnClickListener(v ->
@@ -41,7 +51,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         // Back to homepage
         ivBack.setOnClickListener(v -> {
-            Intent intent = new Intent(ProfileActivity.this, homepage.class);
+            Intent intent = new Intent(ProfileActivity.this, HomeActivity.class);
             startActivity(intent);
             finish();
         });
@@ -69,7 +79,7 @@ public class ProfileActivity extends AppCompatActivity {
     private void clearUserSession() {
         // TODO: clear SharedPreferences / tokens here if you use them
 
-        Intent intent = new Intent(ProfileActivity.this, login.class);
+        Intent intent = new Intent(ProfileActivity.this, LoginActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
         finish();

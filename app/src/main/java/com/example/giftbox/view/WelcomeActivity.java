@@ -1,10 +1,11 @@
-package com.example.giftbox;
+package com.example.giftbox.view;
 
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.giftbox.R;
 import com.google.android.material.button.MaterialButton;
 
 import android.widget.TextView;
@@ -26,15 +27,15 @@ public class WelcomeActivity extends AppCompatActivity {
         TextView tvSkip = findViewById(R.id.tvSkip);
 
         btnLogin.setOnClickListener(v -> {
-            startActivity(new Intent(WelcomeActivity.this, login.class));
+            startActivity(new Intent(WelcomeActivity.this, LoginActivity.class));
         });
 
         btnSignup.setOnClickListener(v -> {
-            startActivity(new Intent(WelcomeActivity.this, signup.class));
+            startActivity(new Intent(WelcomeActivity.this, SignupActivity.class));
         });
 
         tvSkip.setOnClickListener(v -> {
-            startActivity(new Intent(WelcomeActivity.this, homepage.class));
+            startActivity(new Intent(WelcomeActivity.this, HomeActivity.class));
         });
     }
 }

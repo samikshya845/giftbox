@@ -1,7 +1,6 @@
-package com.example.giftbox;
+package com.example.giftbox.view;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Window;
@@ -18,9 +17,10 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class splash_screen extends AppCompatActivity {
+import com.example.giftbox.R;
+import com.example.giftbox.controllers.SplashController;
 
-    private static final long SPLASH_DURATION = 2000L; // 2 seconds
+public class SplashScreenActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +31,9 @@ public class splash_screen extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
+
+        // Init controller
+        SplashController splashController = new SplashController();
 
         // Status bar color to match brand
         Window window = getWindow();
@@ -57,13 +60,15 @@ public class splash_screen extends AppCompatActivity {
         logo.startAnimation(scale);
         appName.startAnimation(fade);
 
+        // Use controller for duration
+        long delay = splashController.getSplashDurationMs();
 
         new Handler().postDelayed(() -> {
-            Intent intent = new Intent(splash_screen.this, WelcomeActivity.class);
+            Intent intent = new Intent(SplashScreenActivity.this, WelcomeActivity.class);
             startActivity(intent);
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             finish();
-        }, SPLASH_DURATION);
+        }, delay);
 
         // Edge-to-edge insets
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -73,7 +78,3 @@ public class splash_screen extends AppCompatActivity {
         });
     }
 }
-
-
-
-

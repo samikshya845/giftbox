@@ -6,24 +6,23 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFF3F7"
+    android:background="#F8E4FF"
     tools:context=".CorporateCategoryActivity">
-
 
     <RelativeLayout
         android:id="@+id/header"
-        android:layout_width="409dp"
-        android:layout_height="174dp"
-        android:background="@drawable/header_gradient"
-        android:padding="16dp"
+        android:layout_width="0dp"
+        android:layout_height="160dp"
+        android:background="@drawable/gradient_purple_pink"
+        android:padding="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/ivBack"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
+            android:layout_width="43dp"
+            android:layout_height="43dp"
             android:layout_marginTop="15dp"
             android:contentDescription="@string/back"
             android:padding="8dp"
@@ -48,7 +47,7 @@
 
             <TextView
                 android:id="@+id/tvCategory"
-                android:layout_width="199dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Corporate gifts"
                 android:textColor="@android:color/white"
@@ -60,7 +59,7 @@
         <LinearLayout
             android:id="@+id/search_container"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="45dp"
             android:layout_alignParentBottom="true"
             android:background="@drawable/search_background"
             android:gravity="center_vertical"
@@ -83,8 +82,7 @@
                 android:hint="Search corporate gifts"
                 android:paddingStart="8dp"
                 android:singleLine="true"
-                android:textColor="@android:color/white"
-                android:textColorHint="#FFE0F0"
+                android:textColor="@android:color/black"
                 android:textSize="14sp"
                 tools:ignore="RtlSymmetry" />
         </LinearLayout>
@@ -178,7 +176,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="8dp"
-                                android:background="@drawable/gradient_purple_pink"
+                                android:background="@drawable/rounded_button_ripple_effect"
                                 android:text="@string/add_to_cart"
                                 android:textColor="@android:color/white"
                                 android:textSize="12sp" />
@@ -246,7 +244,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="8dp"
-                                android:background="@drawable/gradient_purple_pink"
+                                android:background="@drawable/rounded_button_ripple_effect"
                                 android:text="@string/add_to_cart"
                                 android:textColor="@android:color/white"
                                 android:textSize="12sp" />
@@ -322,7 +320,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="8dp"
-                                android:background="@drawable/gradient_purple_pink"
+                                android:background="@drawable/rounded_button_ripple_effect"
                                 android:text="@string/add_to_cart"
                                 android:textColor="@android:color/white"
                                 android:textSize="12sp" />
@@ -390,7 +388,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="8dp"
-                                android:background="@drawable/gradient_purple_pink"
+                                android:background="@drawable/rounded_button_ripple_effect"
                                 android:text="@string/add_to_cart"
                                 android:textColor="@android:color/white"
                                 android:textSize="12sp" />
@@ -467,7 +465,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="8dp"
-                                android:background="@drawable/gradient_purple_pink"
+                                android:background="@drawable/rounded_button_ripple_effect"
                                 android:text="@string/add_to_cart"
                                 android:textColor="@android:color/white"
                                 android:textSize="12sp" />
@@ -535,7 +533,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="8dp"
-                                android:background="@drawable/gradient_purple_pink"
+                                android:background="@drawable/rounded_button_ripple_effect"
                                 android:text="@string/add_to_cart"
                                 android:textColor="@android:color/white"
                                 android:textSize="12sp" />

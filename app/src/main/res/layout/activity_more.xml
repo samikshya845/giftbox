@@ -121,7 +121,7 @@
                         android:layout_height="1dp"
                         android:background="#EEEEEE" />
 
-                    <!-- Feedback -->
+
                     <LinearLayout
                         android:id="@+id/rowFeedback"
                         android:layout_width="match_parent"
@@ -236,8 +236,8 @@
                         <ImageView
                             android:layout_width="22dp"
                             android:layout_height="22dp"
-                            android:src="@drawable/cash"
-                            app:tint="#555555" />
+                            android:src="@drawable/cost"
+                            app:tint="#A60D0A0A" />
 
                         <LinearLayout
                             android:layout_width="0dp"

@@ -24,10 +24,10 @@
             android:id="@+id/ivBack"
             android:layout_width="54dp"
             android:layout_height="59dp"
-            android:layout_marginStart="24dp"
-            android:background="@drawable/circle_white"
+            android:layout_marginStart="10dp"
             android:padding="5dp"
-            android:src="@drawable/back_arrow" />
+            android:src="@drawable/back_arrow"
+            app:tint="@android:color/white"/>
 
         <TextView
             android:layout_width="match_parent"
