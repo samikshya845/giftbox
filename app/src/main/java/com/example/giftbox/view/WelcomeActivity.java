@@ -8,8 +8,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.giftbox.R;
 import com.google.android.material.button.MaterialButton;
 
-import android.widget.TextView;
-
 public class WelcomeActivity extends AppCompatActivity {
 
     @Override
@@ -24,18 +22,12 @@ public class WelcomeActivity extends AppCompatActivity {
 
         MaterialButton btnLogin = findViewById(R.id.btnLogin);
         MaterialButton btnSignup = findViewById(R.id.btnSignup);
-        TextView tvSkip = findViewById(R.id.tvSkip);
 
-        btnLogin.setOnClickListener(v -> {
-            startActivity(new Intent(WelcomeActivity.this, LoginActivity.class));
-        });
 
-        btnSignup.setOnClickListener(v -> {
-            startActivity(new Intent(WelcomeActivity.this, SignupActivity.class));
-        });
+        btnLogin.setOnClickListener(v -> startActivity(new Intent(WelcomeActivity.this, LoginActivity.class)));
 
-        tvSkip.setOnClickListener(v -> {
-            startActivity(new Intent(WelcomeActivity.this, HomeActivity.class));
-        });
+        btnSignup.setOnClickListener(v -> startActivity(new Intent(WelcomeActivity.this, SignupActivity.class)));
+
+
     }
 }
