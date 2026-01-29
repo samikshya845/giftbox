@@ -33,9 +33,6 @@
             android:name=".view.WelcomeActivity"
             android:exported="false" />
         <activity
-            android:name=".FavouritesActivity"
-            android:exported="false" />
-        <activity
             android:name=".NotificationActivity"
             android:exported="false" />
         <activity
@@ -83,9 +80,7 @@
         <activity
             android:name=".BirthdayCategoryActivity"
             android:exported="false" />
-        <activity
-            android:name=".ChatActivity"
-            android:exported="false" />
+
         <activity
             android:name=".Product1Activity"
             android:exported="false" />
