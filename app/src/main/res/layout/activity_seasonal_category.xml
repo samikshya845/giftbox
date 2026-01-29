@@ -139,17 +139,6 @@
                             android:scaleType="centerCrop"
                             android:src="@drawable/dry_fruit" />
 
-                        <ImageView
-                            android:id="@+id/favDashainHamper"
-                            android:layout_width="22dp"
-                            android:layout_height="22dp"
-                            android:layout_alignTop="@id/imgDashainHamper"
-                            android:layout_alignEnd="@id/imgDashainHamper"
-                            android:layout_margin="6dp"
-                            android:background="@drawable/circle_white"
-                            android:padding="3dp"
-                            android:src="@drawable/ic_favourites_border" />
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -206,17 +195,6 @@
                             android:layout_height="110dp"
                             android:scaleType="centerCrop"
                             android:src="@drawable/diyo" />
-
-                        <ImageView
-                            android:id="@+id/favTiharCombo"
-                            android:layout_width="22dp"
-                            android:layout_height="22dp"
-                            android:layout_alignTop="@id/imgTiharCombo"
-                            android:layout_alignEnd="@id/imgTiharCombo"
-                            android:layout_margin="6dp"
-                            android:background="@drawable/circle_white"
-                            android:padding="3dp"
-                            android:src="@drawable/ic_favourites_border" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -283,17 +261,6 @@
                             android:scaleType="centerCrop"
                             android:src="@drawable/holi" />
 
-                        <ImageView
-                            android:id="@+id/favHoliBox"
-                            android:layout_width="22dp"
-                            android:layout_height="22dp"
-                            android:layout_alignTop="@id/imgHoliBox"
-                            android:layout_alignEnd="@id/imgHoliBox"
-                            android:layout_margin="6dp"
-                            android:background="@drawable/circle_white"
-                            android:padding="3dp"
-                            android:src="@drawable/ic_favourites_border" />
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -350,17 +317,6 @@
                             android:layout_height="110dp"
                             android:scaleType="centerCrop"
                             android:src="@drawable/christmas" />
-
-                        <ImageView
-                            android:id="@+id/favChristmasBox"
-                            android:layout_width="22dp"
-                            android:layout_height="22dp"
-                            android:layout_alignTop="@id/imgChristmasBox"
-                            android:layout_alignEnd="@id/imgChristmasBox"
-                            android:layout_margin="6dp"
-                            android:background="@drawable/circle_white"
-                            android:padding="3dp"
-                            android:src="@drawable/ic_favourites_border" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -428,17 +384,6 @@
                             android:scaleType="centerCrop"
                             android:src="@drawable/valentine" />
 
-                        <ImageView
-                            android:id="@+id/favValentineCombo"
-                            android:layout_width="22dp"
-                            android:layout_height="22dp"
-                            android:layout_alignTop="@id/imgValentineCombo"
-                            android:layout_alignEnd="@id/imgValentineCombo"
-                            android:layout_margin="6dp"
-                            android:background="@drawable/circle_white"
-                            android:padding="3dp"
-                            android:src="@drawable/ic_favourites_border" />
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -495,17 +440,6 @@
                             android:layout_height="110dp"
                             android:scaleType="centerCrop"
                             android:src="@drawable/all" />
-
-                        <ImageView
-                            android:id="@+id/favFestiveHamper"
-                            android:layout_width="22dp"
-                            android:layout_height="22dp"
-                            android:layout_alignTop="@id/imgFestiveHamper"
-                            android:layout_alignEnd="@id/imgFestiveHamper"
-                            android:layout_margin="6dp"
-                            android:background="@drawable/circle_white"
-                            android:padding="3dp"
-                            android:src="@drawable/ic_favourites_border" />
 
                         <LinearLayout
                             android:layout_width="match_parent"

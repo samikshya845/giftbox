@@ -174,5 +174,12 @@
     <string name="search_anniversary_gifts">Search anniversay gifts\n</string>
     <string name="seasonal_gifts">Seasonal Gifts</string>
     <string name="search_seasonal_gifts">Search seasonal gifts</string>
+    <string name="notifications">Notifications</string>
+    <string name="we_ll_notify_you_when_something_exciting_happens">We\'ll notify you when something exciting happens</string>
+    <string name="no_notifications_yet">No notifications yet!</string>
+    <string name="no_notifications">No notifications</string>
+    <string name="promo">Promo</string>
+    <string name="order">Order</string>
+    <string name="null">null</string>
 
 </resources>

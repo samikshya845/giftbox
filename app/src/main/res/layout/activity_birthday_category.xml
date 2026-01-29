@@ -138,17 +138,6 @@
                             android:scaleType="centerCrop"
                             android:src="@drawable/mystery_box" />
 
-                        <ImageView
-                            android:id="@+id/favMystery"
-                            android:layout_width="22dp"
-                            android:layout_height="22dp"
-                            android:layout_alignTop="@id/imgMysteryBox"
-                            android:layout_alignEnd="@id/imgMysteryBox"
-                            android:layout_margin="6dp"
-                            android:background="@drawable/circle_white"
-                            android:padding="3dp"
-                            android:src="@drawable/ic_favourites_border" />
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -206,17 +195,6 @@
                             android:layout_height="110dp"
                             android:scaleType="centerCrop"
                             android:src="@drawable/cake_image" />
-
-                        <ImageView
-                            android:id="@+id/favCake"
-                            android:layout_width="22dp"
-                            android:layout_height="22dp"
-                            android:layout_alignTop="@id/imgCake"
-                            android:layout_alignEnd="@id/imgCake"
-                            android:layout_margin="6dp"
-                            android:background="@drawable/circle_white"
-                            android:padding="3dp"
-                            android:src="@drawable/ic_favourites_border" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -283,17 +261,6 @@
                             android:scaleType="centerCrop"
                             android:src="@drawable/giftbox_image" />
 
-                        <ImageView
-                            android:id="@+id/favBundle"
-                            android:layout_width="22dp"
-                            android:layout_height="22dp"
-                            android:layout_alignTop="@id/imgBundle"
-                            android:layout_alignEnd="@id/imgBundle"
-                            android:layout_margin="6dp"
-                            android:background="@drawable/circle_white"
-                            android:padding="3dp"
-                            android:src="@drawable/ic_favourites_border" />
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -350,17 +317,6 @@
                             android:layout_height="110dp"
                             android:scaleType="centerCrop"
                             android:src="@drawable/kids_birthday" />
-
-                        <ImageView
-                            android:id="@+id/favKids"
-                            android:layout_width="22dp"
-                            android:layout_height="22dp"
-                            android:layout_alignTop="@id/imgKids"
-                            android:layout_alignEnd="@id/imgKids"
-                            android:layout_margin="6dp"
-                            android:background="@drawable/circle_white"
-                            android:padding="3dp"
-                            android:src="@drawable/ic_favourites_border" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -427,17 +383,6 @@
                             android:scaleType="centerCrop"
                             android:src="@drawable/flowers_birthday" />
 
-                        <ImageView
-                            android:id="@+id/favFlowers"
-                            android:layout_width="22dp"
-                            android:layout_height="22dp"
-                            android:layout_alignTop="@id/imgFlowers"
-                            android:layout_alignEnd="@id/imgFlowers"
-                            android:layout_margin="6dp"
-                            android:background="@drawable/circle_white"
-                            android:padding="3dp"
-                            android:src="@drawable/ic_favourites_border" />
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -494,17 +439,6 @@
                             android:layout_height="110dp"
                             android:scaleType="centerCrop"
                             android:src="@drawable/balloons_birthday" />
-
-                        <ImageView
-                            android:id="@+id/favBalloons"
-                            android:layout_width="22dp"
-                            android:layout_height="22dp"
-                            android:layout_alignTop="@id/imgBalloons"
-                            android:layout_alignEnd="@id/imgBalloons"
-                            android:layout_margin="6dp"
-                            android:background="@drawable/circle_white"
-                            android:padding="3dp"
-                            android:src="@drawable/ic_favourites_border" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -572,17 +506,6 @@
                             android:scaleType="centerCrop"
                             android:src="@drawable/candles" />
 
-                        <ImageView
-                            android:id="@+id/favCandles"
-                            android:layout_width="22dp"
-                            android:layout_height="22dp"
-                            android:layout_alignTop="@id/imgCandles"
-                            android:layout_alignEnd="@id/imgCandles"
-                            android:layout_margin="6dp"
-                            android:background="@drawable/circle_white"
-                            android:padding="3dp"
-                            android:src="@drawable/ic_favourites_border" />
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -639,17 +562,6 @@
                             android:layout_height="110dp"
                             android:scaleType="centerCrop"
                             android:src="@drawable/chocolate1" />
-
-                        <ImageView
-                            android:id="@+id/favChocolates"
-                            android:layout_width="22dp"
-                            android:layout_height="22dp"
-                            android:layout_alignTop="@id/imgChocolates"
-                            android:layout_alignEnd="@id/imgChocolates"
-                            android:layout_margin="6dp"
-                            android:background="@drawable/circle_white"
-                            android:padding="3dp"
-                            android:src="@drawable/ic_favourites_border" />
 
                         <LinearLayout
                             android:layout_width="match_parent"

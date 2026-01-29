@@ -138,17 +138,6 @@
                             android:scaleType="centerCrop"
                             android:src="@drawable/photoframe" />
 
-                        <ImageView
-                            android:id="@+id/favFrame"
-                            android:layout_width="22dp"
-                            android:layout_height="22dp"
-                            android:layout_alignTop="@id/imgFrame"
-                            android:layout_alignEnd="@id/imgFrame"
-                            android:layout_margin="6dp"
-                            android:background="@drawable/circle_white"
-                            android:padding="3dp"
-                            android:src="@drawable/ic_favourites_border" />
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -205,17 +194,6 @@
                             android:layout_height="110dp"
                             android:scaleType="centerCrop"
                             android:src="@drawable/heartcake" />
-
-                        <ImageView
-                            android:id="@+id/favAnnivCake"
-                            android:layout_width="22dp"
-                            android:layout_height="22dp"
-                            android:layout_alignTop="@id/imgAnnivCake"
-                            android:layout_alignEnd="@id/imgAnnivCake"
-                            android:layout_margin="6dp"
-                            android:background="@drawable/circle_white"
-                            android:padding="3dp"
-                            android:src="@drawable/ic_favourites_border" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -282,17 +260,6 @@
                             android:scaleType="centerCrop"
                             android:src="@drawable/couple_watch" />
 
-                        <ImageView
-                            android:id="@+id/favWatches"
-                            android:layout_width="22dp"
-                            android:layout_height="22dp"
-                            android:layout_alignTop="@id/imgWatches"
-                            android:layout_alignEnd="@id/imgWatches"
-                            android:layout_margin="6dp"
-                            android:background="@drawable/circle_white"
-                            android:padding="3dp"
-                            android:src="@drawable/ic_favourites_border" />
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -349,17 +316,6 @@
                             android:layout_height="110dp"
                             android:scaleType="centerCrop"
                             android:src="@drawable/clocks" />
-
-                        <ImageView
-                            android:id="@+id/favClock"
-                            android:layout_width="22dp"
-                            android:layout_height="22dp"
-                            android:layout_alignTop="@id/imgClock"
-                            android:layout_alignEnd="@id/imgClock"
-                            android:layout_margin="6dp"
-                            android:background="@drawable/circle_white"
-                            android:padding="3dp"
-                            android:src="@drawable/ic_favourites_border" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -426,17 +382,6 @@
                             android:scaleType="centerCrop"
                             android:src="@drawable/dinnerware" />
 
-                        <ImageView
-                            android:id="@+id/favDinnerware"
-                            android:layout_width="22dp"
-                            android:layout_height="22dp"
-                            android:layout_alignTop="@id/imgDinnerware"
-                            android:layout_alignEnd="@id/imgDinnerware"
-                            android:layout_margin="6dp"
-                            android:background="@drawable/circle_white"
-                            android:padding="3dp"
-                            android:src="@drawable/ic_favourites_border" />
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -493,17 +438,6 @@
                             android:layout_height="110dp"
                             android:scaleType="centerCrop"
                             android:src="@drawable/couple_showpiece" />
-
-                        <ImageView
-                            android:id="@+id/favShowpiece"
-                            android:layout_width="22dp"
-                            android:layout_height="22dp"
-                            android:layout_alignTop="@id/imgShowpiece"
-                            android:layout_alignEnd="@id/imgShowpiece"
-                            android:layout_margin="6dp"
-                            android:background="@drawable/circle_white"
-                            android:padding="3dp"
-                            android:src="@drawable/ic_favourites_border" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -571,17 +505,6 @@
                             android:scaleType="centerCrop"
                             android:src="@drawable/couple_bracelet" />
 
-                        <ImageView
-                            android:id="@+id/favBracelets"
-                            android:layout_width="22dp"
-                            android:layout_height="22dp"
-                            android:layout_alignTop="@id/imgBracelets"
-                            android:layout_alignEnd="@id/imgBracelets"
-                            android:layout_margin="6dp"
-                            android:background="@drawable/circle_white"
-                            android:padding="3dp"
-                            android:src="@drawable/ic_favourites_border" />
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -638,17 +561,6 @@
                             android:layout_height="110dp"
                             android:scaleType="centerCrop"
                             android:src="@drawable/anniversary_chocolates" />
-
-                        <ImageView
-                            android:id="@+id/favAnnivChocolates"
-                            android:layout_width="22dp"
-                            android:layout_height="22dp"
-                            android:layout_alignTop="@id/imgAnnivChocolates"
-                            android:layout_alignEnd="@id/imgAnnivChocolates"
-                            android:layout_margin="6dp"
-                            android:background="@drawable/circle_white"
-                            android:padding="3dp"
-                            android:src="@drawable/ic_favourites_border" />
 
                         <LinearLayout
                             android:layout_width="match_parent"

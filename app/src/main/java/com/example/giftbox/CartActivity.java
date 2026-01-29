@@ -28,17 +28,17 @@ public class CartActivity extends AppCompatActivity {
     private LinearLayout layoutGiftWrapOptions;
     private RadioGroup rgGiftWrap;
 
-    // summary views
+
     private TextView subtotalText;
     private TextView totalText;
 
-    private final int SHIPPING_FEE = 100;   // fixed shipping
+    private final int SHIPPING_FEE = 100;
 
-    // quantity views
+
     private TextView item1Quantity, item2Quantity, item3Quantity;
     private View item1Container, item2Container, item3Container;
 
-    // keep these to read options inside updateSummary()
+
     private RadioGroup rgNote;
     private CheckBox giftWrappingCheckbox;
 
@@ -75,7 +75,7 @@ public class CartActivity extends AppCompatActivity {
             updateSummary();
         });
 
-        // ---------- note / gift wrap ----------
+
         rgNote = findViewById(R.id.rgNote);
         noteInputLayout = findViewById(R.id.tilPersonalisedNote);
         etPersonalisedNote = findViewById(R.id.etPersonalisedNote);
@@ -86,7 +86,7 @@ public class CartActivity extends AppCompatActivity {
         MaterialButton checkoutButton = findViewById(R.id.btnProceed);
         ImageView backButton = findViewById(R.id.backButton);
 
-        // ---------- quantity views ----------
+
         item1Quantity = findViewById(R.id.item1Quantity);
         item2Quantity = findViewById(R.id.item2Quantity);
         item3Quantity = findViewById(R.id.item3Quantity);
@@ -98,14 +98,14 @@ public class CartActivity extends AppCompatActivity {
         ImageView item3Increase = findViewById(R.id.item3Increase);
         ImageView item3Decrease = findViewById(R.id.item3Decrease);
 
-        // ---------- summary views ----------
+
         subtotalText = findViewById(R.id.subtotalText);
         TextView shippingText = findViewById(R.id.shippingText);
         totalText    = findViewById(R.id.totalText);
 
         shippingText.setText("NPR " + SHIPPING_FEE);
 
-        // ---------- quantity listeners ----------
+
         item1Increase.setOnClickListener(v -> {
             changeQuantity(item1Quantity, +1);
             updateSummary();
@@ -133,7 +133,7 @@ public class CartActivity extends AppCompatActivity {
             updateSummary();
         });
 
-        // ---------- note radio ----------
+
         rgNote.setOnCheckedChangeListener((group, checkedId) -> {
             if (checkedId == R.id.rbPersonalisedNote) {
                 noteInputLayout.setVisibility(View.VISIBLE);
@@ -144,7 +144,7 @@ public class CartActivity extends AppCompatActivity {
             updateSummary();
         });
 
-        // ---------- gift wrap checkbox ----------
+
         giftWrappingCheckbox.setOnCheckedChangeListener((buttonView, isChecked) -> {
             layoutGiftWrapOptions.setVisibility(isChecked ? View.VISIBLE : View.GONE);
             if (!isChecked) {
@@ -155,7 +155,7 @@ public class CartActivity extends AppCompatActivity {
 
         rgGiftWrap.setOnCheckedChangeListener((group, checkedId) -> updateSummary());
 
-        // ---------- navigation ----------
+
         backButton.setOnClickListener(v -> {
             Intent intent = new Intent(CartActivity.this, HomeActivity.class);
             startActivity(intent);
@@ -163,11 +163,10 @@ public class CartActivity extends AppCompatActivity {
         });
 
         checkoutButton.setOnClickListener(v -> {
-            // calculate summary again to be sure
-            int subtotal = computeSubtotalAndExtras();
-            int total    = subtotal + SHIPPING_FEE;
 
-            // count items + build summary string
+            int subtotal = computeSubtotalAndExtras();
+
+
             int itemCount = 0;
             StringBuilder summaryBuilder = new StringBuilder();
 
@@ -198,7 +197,7 @@ public class CartActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        // ---------- insets ----------
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(android.R.id.content), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -220,7 +219,7 @@ public class CartActivity extends AppCompatActivity {
         computeSubtotalAndExtras();
     }
 
-    // returns subtotal (items + extras), and also updates the UI
+
     @SuppressLint("SetTextI18n")
     private int computeSubtotalAndExtras() {
         int subtotal = 0;
@@ -270,7 +269,7 @@ public class CartActivity extends AppCompatActivity {
         subtotalText.setText("NPR " + (subtotal + extras));
         totalText.setText("NPR " + total);
 
-        // return subtotal + extras so checkout uses same base as label shows
+
         return subtotal + extras;
     }
 }

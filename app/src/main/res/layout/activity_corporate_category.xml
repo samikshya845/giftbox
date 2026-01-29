@@ -137,17 +137,6 @@
                             android:scaleType="centerCrop"
                             android:src="@drawable/leather_notebook" />
 
-                        <ImageView
-                            android:id="@+id/favNotebook"
-                            android:layout_width="22dp"
-                            android:layout_height="22dp"
-                            android:layout_alignTop="@id/imgNotebook"
-                            android:layout_alignEnd="@id/imgNotebook"
-                            android:layout_margin="6dp"
-                            android:background="@drawable/circle_white"
-                            android:padding="3dp"
-                            android:src="@drawable/ic_favourites_border" />
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -204,17 +193,6 @@
                             android:layout_height="110dp"
                             android:scaleType="centerCrop"
                             android:src="@drawable/mug_set" />
-
-                        <ImageView
-                            android:id="@+id/favMugSet"
-                            android:layout_width="22dp"
-                            android:layout_height="22dp"
-                            android:layout_alignTop="@id/imgMugSet"
-                            android:layout_alignEnd="@id/imgMugSet"
-                            android:layout_margin="6dp"
-                            android:background="@drawable/circle_white"
-                            android:padding="3dp"
-                            android:src="@drawable/ic_favourites_border" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -281,17 +259,6 @@
                             android:scaleType="centerCrop"
                             android:src="@drawable/key_set" />
 
-                        <ImageView
-                            android:id="@+id/favPenSet"
-                            android:layout_width="22dp"
-                            android:layout_height="22dp"
-                            android:layout_alignTop="@id/imgPenSet"
-                            android:layout_alignEnd="@id/imgPenSet"
-                            android:layout_margin="6dp"
-                            android:background="@drawable/circle_white"
-                            android:padding="3dp"
-                            android:src="@drawable/ic_favourites_border" />
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -348,17 +315,6 @@
                             android:layout_height="110dp"
                             android:scaleType="centerCrop"
                             android:src="@drawable/wooden_desk" />
-
-                        <ImageView
-                            android:id="@+id/favDeskOrganizer"
-                            android:layout_width="22dp"
-                            android:layout_height="22dp"
-                            android:layout_alignTop="@id/imgDeskOrganizer"
-                            android:layout_alignEnd="@id/imgDeskOrganizer"
-                            android:layout_margin="6dp"
-                            android:background="@drawable/circle_white"
-                            android:padding="3dp"
-                            android:src="@drawable/ic_favourites_border" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -426,17 +382,6 @@
                             android:scaleType="centerCrop"
                             android:src="@drawable/bottle" />
 
-                        <ImageView
-                            android:id="@+id/favBottle"
-                            android:layout_width="22dp"
-                            android:layout_height="22dp"
-                            android:layout_alignTop="@id/imgBottle"
-                            android:layout_alignEnd="@id/imgBottle"
-                            android:layout_margin="6dp"
-                            android:background="@drawable/circle_white"
-                            android:padding="3dp"
-                            android:src="@drawable/ic_favourites_border" />
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -493,17 +438,6 @@
                             android:layout_height="110dp"
                             android:scaleType="centerCrop"
                             android:src="@drawable/mouse" />
-
-                        <ImageView
-                            android:id="@+id/favMouse"
-                            android:layout_width="22dp"
-                            android:layout_height="22dp"
-                            android:layout_alignTop="@id/imgMouse"
-                            android:layout_alignEnd="@id/imgMouse"
-                            android:layout_margin="6dp"
-                            android:background="@drawable/circle_white"
-                            android:padding="3dp"
-                            android:src="@drawable/ic_favourites_border" />
 
                         <LinearLayout
                             android:layout_width="match_parent"

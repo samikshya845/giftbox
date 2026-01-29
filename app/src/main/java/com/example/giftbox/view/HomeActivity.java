@@ -12,9 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.giftbox.AnniversaryCategoryActivity;
 import com.example.giftbox.BirthdayCategoryActivity;
 import com.example.giftbox.CartActivity;
-import com.example.giftbox.ChatActivity;
 import com.example.giftbox.CorporateCategoryActivity;
-import com.example.giftbox.FavouritesActivity;
 import com.example.giftbox.MoreActivity;
 import com.example.giftbox.NotificationActivity;
 import com.example.giftbox.R;
@@ -62,13 +60,13 @@ public class HomeActivity extends AppCompatActivity {
         });
 
         // More icon click
-        ImageView ivMore = findViewById(R.id.ivMore);
-        ivMore.setOnClickListener(v -> {
-            Intent intent = new Intent(HomeActivity.this, MoreActivity.class);
-            intent.putExtra("username", username);
-            startActivity(intent);
-            overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
-        });
+        //ImageView ivMore = findViewById(R.id.ivMore);
+        //ivMore.setOnClickListener(v -> {
+            //Intent intent = new Intent(HomeActivity.this, MoreActivity.class);
+            //intent.putExtra("username", username);
+            //startActivity(intent);
+           // overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+        //});
 
         // Category cards
         LinearLayout categoryBirthday = findViewById(R.id.category_birthday);
@@ -119,8 +117,8 @@ public class HomeActivity extends AppCompatActivity {
                 return true;
             }
 
-            if (itemId == R.id.nav_chat) {
-                Intent intent = new Intent(HomeActivity.this, ChatActivity.class);
+            if (itemId == R.id.nav_dot) {
+                Intent intent = new Intent(HomeActivity.this, MoreActivity.class);
                 intent.putExtra("username", username);
                 startActivity(intent);
                 overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
@@ -135,13 +133,7 @@ public class HomeActivity extends AppCompatActivity {
                 return true;
             }
 
-            if (itemId == R.id.nav_fav) {
-                Intent intent = new Intent(HomeActivity.this, FavouritesActivity.class);
-                intent.putExtra("username", username);
-                startActivity(intent);
-                overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
-                return true;
-            }
+
 
             return false;
         });
