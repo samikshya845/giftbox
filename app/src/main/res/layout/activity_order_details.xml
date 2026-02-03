@@ -8,17 +8,14 @@
     android:background="#F8E4FF"
     tools:context=".OrderDetailsActivity">
 
-    <!-- TOP BAR -->
+
     <LinearLayout
         android:id="@+id/header"
-        android:layout_width="407dp"
-        android:layout_height="143dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/gradient_purple_pink"
         android:orientation="vertical"
-        android:paddingStart="16dp"
-        android:paddingTop="16dp"
-        android:paddingEnd="16dp"
-        android:paddingBottom="12dp"
+        android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -26,15 +23,15 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="25dp"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/backButton"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:padding="6dp"
                 android:clickable="true"
                 android:contentDescription="@string/todo"
                 android:src="@drawable/back_arrow"
@@ -42,27 +39,33 @@
 
             <TextView
                 android:id="@+id/txtTitle"
-                android:layout_width="292dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
                 android:layout_weight="1"
-                android:gravity="center"
                 android:text="Order details"
                 android:textColor="@android:color/white"
-                android:textSize="24sp"
+                android:textSize="28sp"
                 android:textStyle="bold" />
+
+
+            <View
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="15dp" />
         </LinearLayout>
 
         <TextView
             android:id="@+id/txtSubtitle"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="12dp"
             android:text="Full summary of your Giftbox order."
             android:textColor="#FFE6FF"
-            android:textSize="15sp" />
+            android:textSize="13sp" />
     </LinearLayout>
 
-    <!-- SCROLL CONTENT -->
+
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -78,7 +81,7 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- ORDER HEADER CARD: ID + STATUS + DATE -->
+
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -123,7 +126,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- ITEMS CARD -->
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardItems"
                 android:layout_width="match_parent"
@@ -147,7 +150,7 @@
                         android:textSize="15sp"
                         android:textStyle="bold" />
 
-                    <!-- You can later change this to a RecyclerView if needed -->
+
                     <TextView
                         android:id="@+id/txtItemsList"
                         android:layout_width="match_parent"
@@ -163,7 +166,7 @@
                         android:layout_marginTop="10dp"
                         android:background="#EEEEEE" />
 
-                    <!-- Pricing summary -->
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -237,7 +240,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- DELIVERY & PARTNER INFO CARD -->
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardDelivery"
                 android:layout_width="match_parent"
@@ -316,7 +319,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- SUPPORT CARD -->
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardSupport"
                 android:layout_width="match_parent"
@@ -353,7 +356,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="Support: +977-9861366775 · support@giftbox.com"
+                        android:text="Support: +977-9861944088, +977-9861366775 support@giftbox.com"
                         android:textColor="#6B2D92"
                         android:textSize="12sp" />
                 </LinearLayout>
@@ -362,7 +365,7 @@
         </LinearLayout>
     </ScrollView>
 
-    <!-- BOTTOM BUTTONS -->
+
     <LinearLayout
         android:id="@+id/layoutBottom"
         android:layout_width="0dp"

@@ -430,6 +430,7 @@
             </androidx.cardview.widget.CardView>
 
             <!-- OPTIONS CARD -->
+            <!-- OPTIONS CARD -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/optionsCard"
                 android:layout_width="match_parent"
@@ -506,13 +507,14 @@
                             android:maxLines="4" />
                     </com.google.android.material.textfield.TextInputLayout>
 
-                    <!-- Gift wrapping -->
+                    <!-- Divider -->
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:layout_marginTop="16dp"
                         android:background="#EEEEEE" />
 
+                    <!-- Gift wrapping (SIMPLIFIED) -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -532,38 +534,12 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:layout_marginStart="8dp"
-                            android:text="@string/gift_wrapping"
+                            android:text="Gift wrapping (+Rs. 100)"
                             android:textColor="#333333"
                             android:textSize="14sp" />
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:id="@+id/layoutGiftWrapOptions"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:paddingTop="8dp"
-                        android:visibility="gone">
-
-                        <RadioGroup
-                            android:id="@+id/rgGiftWrap"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
-                            <RadioButton
-                                android:id="@+id/rbSingleWrap"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Single wrap (+Rs. 50)" />
-
-                            <RadioButton
-                                android:id="@+id/rbDoubleWrap"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Double wrap (+Rs. 100)" />
-                        </RadioGroup>
-                    </LinearLayout>
+                    <!-- The RadioGroup for single/double wrap has been REMOVED -->
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
