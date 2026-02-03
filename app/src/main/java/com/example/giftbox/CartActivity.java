@@ -4,9 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.CheckBox;
 import android.widget.ImageView;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -17,17 +15,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.giftbox.view.HomeActivity;
 import com.google.android.material.button.MaterialButton;
-import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
 
 public class CartActivity extends AppCompatActivity {
-
-    private TextInputLayout noteInputLayout;
-    private TextInputEditText etPersonalisedNote;
-
-    // --- REMOVED unused variables for old gift wrap options ---
-    // private LinearLayout layoutGiftWrapOptions;
-    // private RadioGroup rgGiftWrap;
 
     private TextView subtotalText;
     private TextView totalText;
@@ -36,9 +25,6 @@ public class CartActivity extends AppCompatActivity {
 
     private TextView item1Quantity, item2Quantity, item3Quantity;
     private View item1Container, item2Container, item3Container;
-
-    private RadioGroup rgNote;
-    private CheckBox giftWrappingCheckbox;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -59,11 +45,6 @@ public class CartActivity extends AppCompatActivity {
         ImageView item1Delete = findViewById(R.id.item1Delete);
         ImageView item2Delete = findViewById(R.id.item2Delete);
         ImageView item3Delete = findViewById(R.id.item3Delete);
-
-        rgNote = findViewById(R.id.rgNote);
-        noteInputLayout = findViewById(R.id.tilPersonalisedNote);
-        etPersonalisedNote = findViewById(R.id.etPersonalisedNote);
-        giftWrappingCheckbox = findViewById(R.id.giftWrappingCheckbox);
 
         MaterialButton checkoutButton = findViewById(R.id.btnProceed);
         ImageView backButton = findViewById(R.id.backButton);
@@ -98,25 +79,6 @@ public class CartActivity extends AppCompatActivity {
         item2Delete.setOnClickListener(v -> { item2Container.setVisibility(View.GONE); updateSummary(); });
         item3Delete.setOnClickListener(v -> { item3Container.setVisibility(View.GONE); updateSummary(); });
 
-
-        // --- Listeners for Options ---
-        rgNote.setOnCheckedChangeListener((group, checkedId) -> {
-            if (checkedId == R.id.rbPersonalisedNote) {
-                noteInputLayout.setVisibility(View.VISIBLE);
-            } else {
-                noteInputLayout.setVisibility(View.GONE);
-                etPersonalisedNote.setText("");
-            }
-            updateSummary();
-        });
-
-        // --- SIMPLIFIED Gift Wrapping Listener ---
-        giftWrappingCheckbox.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            // Just update the summary when the checkbox state changes. No need to show/hide anything.
-            updateSummary();
-        });
-        // --- REMOVED listener for rgGiftWrap ---
-
         // --- Listeners for Navigation ---
         backButton.setOnClickListener(v -> {
             // It's better practice to just finish the activity than to start a new one
@@ -125,7 +87,7 @@ public class CartActivity extends AppCompatActivity {
         });
 
         checkoutButton.setOnClickListener(v -> {
-            int subtotal = computeSubtotalAndExtras();
+            int subtotal = computeSubtotal();
 
             // This logic to build the summary is correct and preserved.
             int itemCount = 0;
@@ -150,7 +112,7 @@ public class CartActivity extends AppCompatActivity {
             Intent intent = new Intent(CartActivity.this, CheckoutActivity.class);
             intent.putExtra("subtotal", subtotal);
             intent.putExtra("shipping_fee", SHIPPING_FEE);
-            intent.putExtra("total", subtotal + SHIPPING_FEE); // Corrected total
+            intent.putExtra("total", subtotal + SHIPPING_FEE);
             intent.putExtra("item_count", itemCount);
             intent.putExtra("items_summary", itemsSummary);
             startActivity(intent);
@@ -177,11 +139,11 @@ public class CartActivity extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     private void updateSummary() {
         // This method now just calls the calculation method.
-        computeSubtotalAndExtras();
+        computeSubtotal();
     }
 
     @SuppressLint("SetTextI18n")
-    private int computeSubtotalAndExtras() {
+    private int computeSubtotal() {
         int subtotal = 0;
 
         // Prices for items
@@ -199,30 +161,13 @@ public class CartActivity extends AppCompatActivity {
             subtotal += Integer.parseInt(item3Quantity.getText().toString()) * PRICE_ITEM3;
         }
 
-        // Calculate fees for extras
-        int extras = 0;
-        final int NOTE_FEE = 100;
-        final int GIFT_WRAP_FEE = 100;
-
-        // Add note fee if applicable
-        if (rgNote.getCheckedRadioButtonId() == R.id.rbPersonalisedNote) {
-            extras += NOTE_FEE;
-        }
-
-        // --- SIMPLIFIED Gift Wrapping Logic ---
-        // If the checkbox is checked, add the gift wrap fee.
-        if (giftWrappingCheckbox.isChecked()) {
-            extras += GIFT_WRAP_FEE;
-        }
-
         // Update UI Text
-        int finalSubtotal = subtotal + extras;
-        int total = finalSubtotal + SHIPPING_FEE;
+        int total = subtotal + SHIPPING_FEE;
 
-        subtotalText.setText("NPR " + finalSubtotal);
+        subtotalText.setText("NPR " + subtotal);
         totalText.setText("NPR " + total);
 
-        // Return the final subtotal (including extras) to be passed in the intent
-        return finalSubtotal;
+        // Return the subtotal to be passed in the intent
+        return subtotal;
     }
 }

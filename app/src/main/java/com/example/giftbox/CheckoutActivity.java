@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -30,6 +31,7 @@ import com.example.giftbox.view.AddAddressActivity;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 
 import java.io.IOException;
 import java.util.Calendar;
@@ -40,6 +42,10 @@ public class CheckoutActivity extends AppCompatActivity {
 
     private static final String TAG = "CheckoutActivity";
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1001;
+
+    // Constants for fees
+    private final int NOTE_FEE = 100;
+    private final int GIFT_WRAP_FEE = 100;
 
     // Geolocation Variables
     private FusedLocationProviderClient fusedLocationClient;
@@ -58,6 +64,14 @@ public class CheckoutActivity extends AppCompatActivity {
     private String savedCustomerName = "";
     private String savedDetailAddress = "";
     private String savedPhone = "";
+
+    // Note and Gift Wrapping Variables
+    private RadioGroup rgNote;
+    private TextInputLayout noteInputLayout;
+    private TextInputEditText etPersonalisedNote;
+    private CheckBox giftWrappingCheckbox;
+    private int initialSubtotal;
+    private int initialTotal;
 
     /**
      * This launcher starts the AddAddressActivity and waits for the complete address
@@ -110,17 +124,26 @@ public class CheckoutActivity extends AppCompatActivity {
         tvDeliveryFee = findViewById(R.id.tvDeliveryFee);
         tvTotal = findViewById(R.id.tvTotal);
 
+        // Initialize note and gift wrapping views
+        rgNote = findViewById(R.id.rgNote);
+        noteInputLayout = findViewById(R.id.tilPersonalisedNote);
+        etPersonalisedNote = findViewById(R.id.etPersonalisedNote);
+        giftWrappingCheckbox = findViewById(R.id.giftWrappingCheckbox);
+
         // Get data passed from CartActivity
         Intent in = getIntent();
-        subtotal = in.getIntExtra("subtotal", 0);
+        initialSubtotal = in.getIntExtra("subtotal", 0);
         shippingFee = in.getIntExtra("shipping_fee", 0);
-        total = in.getIntExtra("total", 0);
+        initialTotal = in.getIntExtra("total", 0);
+        subtotal = initialSubtotal;
+        total = initialTotal;
         itemCount = in.getIntExtra("item_count", 0);
         itemsSummary = in.getStringExtra("items_summary");
 
         // --- UI Setup and Listeners ---
         updateSummaryUI();
         initAddressUI();
+        initNoteAndGiftWrappingUI();
         rgPayment.clearCheck();
 
         esewaRow.setOnClickListener(v -> rgPayment.check(R.id.rbEsewa));
@@ -137,6 +160,52 @@ public class CheckoutActivity extends AppCompatActivity {
                 placeOrderToLaravel(); // This function now handles proceeding to the success screen
             }
         });
+    }
+
+    /**
+     * Sets up the listeners for the note and gift wrapping UI elements.
+     */
+    private void initNoteAndGiftWrappingUI() {
+        // Note options
+        rgNote.setOnCheckedChangeListener((group, checkedId) -> {
+            if (checkedId == R.id.rbPersonalisedNote) {
+                noteInputLayout.setVisibility(View.VISIBLE);
+            } else {
+                noteInputLayout.setVisibility(View.GONE);
+                etPersonalisedNote.setText("");
+            }
+            updateOrderSummary();
+        });
+
+        // Gift wrapping
+        giftWrappingCheckbox.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            updateOrderSummary();
+        });
+    }
+
+    /**
+     * Updates the order summary based on selected options.
+     */
+    private void updateOrderSummary() {
+        int additionalFees = 0;
+
+        // Check if personalized note is selected
+        if (rgNote.getCheckedRadioButtonId() == R.id.rbPersonalisedNote) {
+            additionalFees += NOTE_FEE;
+        }
+
+        // Check if gift wrapping is selected
+        if (giftWrappingCheckbox.isChecked()) {
+            additionalFees += GIFT_WRAP_FEE;
+        }
+
+        // Update the subtotal and total
+        subtotal = initialSubtotal + additionalFees;
+        total = subtotal + shippingFee;
+
+        // Update the UI
+        tvSubtotal.setText("NPR." + subtotal);
+        tvTotal.setText("NPR." + total);
     }
 
     /**
@@ -203,6 +272,15 @@ public class CheckoutActivity extends AppCompatActivity {
         intent.putExtra("delivery_phone", edtPhone.getText().toString().trim());
         intent.putExtra("delivery_lat", deliveryLat);
         intent.putExtra("delivery_lng", deliveryLng);
+
+        // Add note and gift wrapping info to the intent
+        boolean hasNote = rgNote.getCheckedRadioButtonId() == R.id.rbPersonalisedNote;
+        intent.putExtra("has_note", hasNote);
+        if (hasNote) {
+            intent.putExtra("note_text", etPersonalisedNote.getText().toString().trim());
+        }
+        intent.putExtra("has_gift_wrapping", giftWrappingCheckbox.isChecked());
+
         return intent;
     }
 
@@ -284,6 +362,16 @@ public class CheckoutActivity extends AppCompatActivity {
             Toast.makeText(this, "Delivery coordinates have not been set. Please select an address again.", Toast.LENGTH_LONG).show();
             return false;
         }
+
+        // Validate personalized note if selected
+        if (rgNote.getCheckedRadioButtonId() == R.id.rbPersonalisedNote) {
+            if (etPersonalisedNote.getText().toString().trim().isEmpty()) {
+                etPersonalisedNote.setError("Please enter your personalized message");
+                Toast.makeText(this, "Please enter your personalized message", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        }
+
         return true;
     }
 
@@ -292,6 +380,25 @@ public class CheckoutActivity extends AppCompatActivity {
      * After the API call is successful, it proceeds to the success screen.
      */
     private void placeOrderToLaravel() {
+        // Get payment method
+        String paymentMethod = "";
+        int selectedPaymentId = rgPayment.getCheckedRadioButtonId();
+        if (selectedPaymentId == R.id.rbEsewa) {
+            paymentMethod = "eSewa";
+        } else if (selectedPaymentId == R.id.rbCod) {
+            paymentMethod = "Cash on Delivery";
+        }
+
+        // Get note details
+        String noteText = "";
+        boolean hasNote = rgNote.getCheckedRadioButtonId() == R.id.rbPersonalisedNote;
+        if (hasNote) {
+            noteText = etPersonalisedNote.getText().toString().trim();
+        }
+
+        // Get gift wrapping status
+        boolean hasGiftWrapping = giftWrappingCheckbox.isChecked();
+
         // This is a placeholder for your actual API call (e.g., using Retrofit or Volley)
         Log.d("API_CALL", "Placing Order to Laravel backend...");
         Log.d("API_CALL", "Recipient Name: " + savedCustomerName);
@@ -299,6 +406,12 @@ public class CheckoutActivity extends AppCompatActivity {
         Log.d("API_CALL", "Delivery Latitude: " + deliveryLat);
         Log.d("API_CALL", "Delivery Longitude: " + deliveryLng);
         Log.d("API_CALL", "Phone: " + savedPhone);
+        Log.d("API_CALL", "Payment Method: " + paymentMethod);
+        Log.d("API_CALL", "Has Note: " + hasNote);
+        if (hasNote) {
+            Log.d("API_CALL", "Note Text: " + noteText);
+        }
+        Log.d("API_CALL", "Has Gift Wrapping: " + hasGiftWrapping);
 
         // Assuming the API call is successful, we then launch the success activity.
         try {
