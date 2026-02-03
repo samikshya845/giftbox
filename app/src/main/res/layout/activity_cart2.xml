@@ -7,7 +7,6 @@
     android:background="#F8E4FF"
     tools:context=".CartActivity">
 
-
     <LinearLayout
         android:id="@+id/header"
         android:layout_width="406dp"
@@ -60,7 +59,6 @@
             android:textSize="12sp" />
     </LinearLayout>
 
-
     <ScrollView
         android:id="@+id/cartItemsScrollView"
         android:layout_width="0dp"
@@ -76,7 +74,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="16dp">
-
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cartItemsCard"
@@ -102,13 +99,11 @@
                         android:textStyle="bold"
                         android:textColor="#222222" />
 
-
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:layout_marginTop="8dp"
                         android:background="#EEEEEE" />
-
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/item1Container"
@@ -211,12 +206,10 @@
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:background="#F1F1F1" />
-
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/item2Container"
@@ -425,145 +418,6 @@
                             app:layout_constraintBottom_toBottomOf="parent" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
-
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- OPTIONS CARD -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/optionsCard"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                app:cardCornerRadius="18dp"
-                app:cardElevation="3dp"
-                app:cardUseCompatPadding="true">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <!-- Add note header with icon -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical">
-
-                        <ImageView
-                            android:layout_width="18dp"
-                            android:layout_height="18dp"
-                            android:src="@drawable/ic_note"
-                            app:tint="#6B2D92" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:text="Add note"
-                            android:textColor="#000000"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-
-                    <RadioGroup
-                        android:id="@+id/rgNote"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_marginTop="8dp">
-
-                        <RadioButton
-                            android:id="@+id/rbNoNote"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="No note (Rs. 0)" />
-
-                        <RadioButton
-                            android:id="@+id/rbPersonalisedNote"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Personalised note (+Rs. 100)" />
-                    </RadioGroup>
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/tilPersonalisedNote"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:hint="Type your personalised message..."
-                        android:visibility="gone">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/etPersonalisedNote"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:inputType="textMultiLine"
-                            android:minLines="3"
-                            android:maxLines="4" />
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <!-- Gift wrapping -->
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="16dp"
-                        android:background="#EEEEEE" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:layout_marginTop="12dp">
-
-                        <ImageView
-                            android:layout_width="18dp"
-                            android:layout_height="18dp"
-                            android:src="@drawable/ic_gift"
-                            app:tint="#6B2D92" />
-
-                        <CheckBox
-                            android:id="@+id/giftWrappingCheckbox"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:layout_marginStart="8dp"
-                            android:text="@string/gift_wrapping"
-                            android:textColor="#333333"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/layoutGiftWrapOptions"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:paddingTop="8dp"
-                        android:visibility="gone">
-
-                        <RadioGroup
-                            android:id="@+id/rgGiftWrap"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
-                            <RadioButton
-                                android:id="@+id/rbSingleWrap"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Single wrap (+Rs. 50)" />
-
-                            <RadioButton
-                                android:id="@+id/rbDoubleWrap"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Double wrap (+Rs. 100)" />
-                        </RadioGroup>
-                    </LinearLayout>
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

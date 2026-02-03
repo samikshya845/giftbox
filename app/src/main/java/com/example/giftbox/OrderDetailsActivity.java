@@ -84,7 +84,7 @@ public class OrderDetailsActivity extends AppCompatActivity {
         String deliveryFeeStr = intent.getStringExtra("delivery_fee_text");
         String paymentStatus  = intent.getStringExtra("payment_status");
         String deliveryName   = intent.getStringExtra("delivery_name");
-
+        intent.putExtra("delivery_fee", 100);
         if (orderId != null && !orderId.isEmpty()) {
             txtOrderId.setText(orderId);
         }
@@ -102,13 +102,18 @@ public class OrderDetailsActivity extends AppCompatActivity {
             txtItemsList.setText(itemsList);
         }
 
+
+        if (subtotalStr != null && !subtotalStr.isEmpty()) {
+            txtSubtotal.setText(subtotalStr);
+        } else if (totalPaid != null && !totalPaid.isEmpty()) {
+
+            txtSubtotal.setText(totalPaid);
+        }
+
         if (totalPaid != null && !totalPaid.isEmpty()) {
             txtTotalPaid.setText(totalPaid);
         }
 
-        if (subtotalStr != null && !subtotalStr.isEmpty()) {
-            txtSubtotal.setText(subtotalStr);
-        }
         if (deliveryFeeStr != null && !deliveryFeeStr.isEmpty()) {
             txtDeliveryFee.setText(deliveryFeeStr);
         }

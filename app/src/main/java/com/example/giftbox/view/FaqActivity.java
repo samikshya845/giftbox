@@ -16,7 +16,7 @@ import com.example.giftbox.R;
 
 public class FaqActivity extends AppCompatActivity {
 
-    // FAQ Blocks
+
     private final LinearLayout[] faqBlocks = new LinearLayout[8];
     private final TextView[] tvQuestions = new TextView[8];
     private final TextView[] tvAnswers = new TextView[8];
@@ -84,7 +84,7 @@ public class FaqActivity extends AppCompatActivity {
             final int index = i;
             faqBlocks[index].setOnClickListener(v -> toggleAnswerVisibility(index));
 
-            // Also set on question TextView for better UX
+
             tvQuestions[index].setOnClickListener(v -> toggleAnswerVisibility(index));
         }
     }

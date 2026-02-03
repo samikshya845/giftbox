@@ -81,14 +81,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="• Base fee: Rs. 80 inside city"
+                        android:text="• Base fee: Rs. 80 inside 10km"
                         android:textColor="#444444"
                         android:textSize="17sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="• Extra: Rs. 10 per km after 5 km"
+                        android:text="• Extra: Rs. 40 per inside 20km"
                         android:textColor="#444444"
                         android:textSize="17sp" />
 
@@ -167,7 +167,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="0 – 3 km"
+                            android:text="0 – 10 km"
                             android:textColor="#555555"
                             android:textSize="14sp" />
 
@@ -192,7 +192,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="3 – 7 km"
+                            android:text="10– 20 km"
                             android:textColor="#555555"
                             android:textSize="14sp" />
 
@@ -217,7 +217,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="7 – 12 km"
+                            android:text="20 – 50 km"
                             android:textColor="#555555"
                             android:textSize="14sp" />
 
@@ -243,7 +243,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="12+ km"
+                            android:text="50+ km"
                             android:textColor="#555555"
                             android:textSize="14sp" />
 
@@ -252,7 +252,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="end"
-                            android:text="Contact support"
+                            android:text="Contact Customer Support"
                             android:textColor="#D2691E"
                             android:textSize="14sp" />
                     </LinearLayout>
