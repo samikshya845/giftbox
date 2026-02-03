@@ -59,7 +59,7 @@
             android:textSize="15sp" />
     </LinearLayout>
 
-    <!-- Content area with ScrollView -->
+
     <ScrollView
         android:id="@+id/scrollContent"
         android:layout_width="match_parent"
@@ -73,7 +73,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- Delivery Information card -->
+
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -123,7 +123,7 @@
                             android:inputType="phone" />
                     </com.google.android.material.textfield.TextInputLayout>
 
-                    <!-- Address Section -->
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -192,7 +192,7 @@
                         </LinearLayout>
                     </LinearLayout>
 
-                    <!-- Delivery date field -->
+
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/tilDeliveryDate"
                         android:layout_width="match_parent"
@@ -213,7 +213,6 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- OPTIONS CARD (moved from CartActivity) -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/optionsCard"
                 android:layout_width="match_parent"
